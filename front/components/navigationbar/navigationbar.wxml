@@ -1,0 +1,10 @@
+<!-- 自定义navigationBar -->
+<view class="navigation" style="background-color: {{navigationBackgroundColor}}; height: {{paddingTopNum}}px; padding-top: {{statusBarHeight}}px;">
+	<!-- 左边的返回按钮图标 -->
+	<view class='navigation_bar_left' bindtap="back">
+		<view class="iconfont icon-fanhuijian"></view>
+	</view>
+	<view class='navigation_bar_center'>
+		<view>{{navigationBarTitleText}}</view>
+	</view>
+</view>

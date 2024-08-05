@@ -1,0 +1,22 @@
+<!--components/custom-tab-bar/custom-tab-bar.wxml-->
+<!--index.wxml-->
+<view class="fu-bar shadow foot">
+	<view class="cell" bindtap="navChange" data-cur="home">
+		<view class="image">
+			<image src="/image/{{pageCur == 'home' ? 'home_red' : 'home'}}.png"></image>
+		</view>
+    <view class="{{pageCur == 'home' ? 'text-red' : 'text-gray'}}">首页</view>
+	</view>
+  <view class="cell" bindtap="navChange" data-cur="program">
+		<view class="image">
+			<image src="/image/{{pageCur == 'program' ? 'program_red' : 'program'}}.png"></image>
+		</view>
+    <view class="{{pageCur == 'program' ? 'text-red' : 'text-gray'}}">项目	</view>
+	</view>
+  <view class="cell" bindtap="navChange" data-cur="my">
+		<view class="image">
+			<image src="/image/{{pageCur == 'my' ? 'my_red' : 'my'}}.png"></image>
+		</view>
+    <view class="{{pageCur == 'my' ? 'text-red' : 'text-gray'}}">我的</view>
+	</view>
+</view>

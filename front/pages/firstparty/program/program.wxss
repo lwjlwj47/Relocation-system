@@ -1,0 +1,7 @@
+/* pages/firstparty/program/program.wxss */
+page{
+	background-color:rgba(245, 245, 245, 1);
+}
+.search{
+	margin: 0rpx 24rpx 0rpx 24rpx;
+}

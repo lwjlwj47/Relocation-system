@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/firstparty/program/program",
+    "pages/firstparty/home/home",
+    "pages/first/first",
+    "pages/firstparty/my/my",
+    "pages/index/index",
+    "pages/logs/logs",
+    "components/navigationbar/navigationbar",
+    "components/custom-tab-bar/custom-tab-bar"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/firstparty/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/firstparty/my/my",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/firstparty/program/program",
+        "text": "项目"
+      }
+    ]
+  }
+}

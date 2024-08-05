@@ -1,0 +1,55 @@
+<!--pages/firstparty/home/home.wxml-->
+
+<view class = "top-back">
+<view style="height: {{top_name_height}}px;"></view>
+<view class = "top" style="height: {{name_height}}px;">
+<image class ="avatar"src="/image/company.jpg"></image>
+<view class = "top-name" >仲远搬家运输有限公司</view>
+</view>
+</view>
+
+<t-swiper class="Carousel"
+  current="{{current}}"
+  autoplay="{{autoplay}}"
+  duration="{{duration}}"
+  interval="{{interval}}"
+  navigation="{{ { type: 'dots-bar' } }}"
+  list="{{swiperList}}"
+  bind:click="onTap"
+  bind:change="onChange"
+  bind:image-load="onImageLoad"
+>
+</t-swiper>
+<view class="introduce">
+<view class="introduce-1">
+<view class="introduce-image">
+  <image src="/image/truck-1.png" class="introduce-image-1"></image>
+</view>
+<button class="introduce-button">公司简介</button>
+</view>
+<view class="introduce-1">
+  <view class="introduce-image">
+  <image src="/image/truck.png" class="introduce-image-1"></image>
+</view>
+<button class="introduce-button">项目进度</button>
+</view>
+</view>
+<view class="server">
+<view class="word-line">
+<view class="word">
+<text style="color: rgba(204, 33, 41, 1);">服务</text>
+<text style="color: rgba(51, 51, 51, 1);">案例</text>
+</view>
+</view>
+<view class="case" wx:for="{{cases}}">
+  <!-- <image src="{{item.image}}" class="case-image" mode="widthFix"></image> -->
+  <view class="case-image">
+  <image src="{{item.image}}"  class="case-image"/>
+  </view>
+  <view class="case-introduce">
+  <text>{{item.introduce}}</text>
+  <text>{{item.time}}</text>
+  </view>
+</view>
+</view>
+<custom-tab-bar pageCur="{{pageCur}}"></custom-tab-bar>

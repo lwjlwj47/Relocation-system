@@ -1,0 +1,26 @@
+<!--pages/firstparty/my/my.wxml-->
+<view class = "top-back">
+<view style="height: {{top_name_height}}px;"></view>
+<view class = "top-name" style="height: {{name_height}}px;">个人中心</view>
+<view class="login">
+	<image class ="avatar"src="/image/avatar.png"></image>
+	<view class="my">
+	<view  class ="name" >{{name}}</view>
+	<view class="phone">{{phone}}</view>
+	</view>
+</view>
+</view>
+<t-cell-group theme="card" class="card">
+  <t-cell title="我的项目管理"  hover arrow >
+		<view slot="left-icon">
+			<t-image src="/image/cell1.png" width="24" height="24"></t-image>
+		</view>
+		</t-cell>
+	<t-cell title="我的消息"  hover arrow >
+	<view slot="left-icon">
+			<t-image src="/image/cell2.png" width="24" height="24"></t-image>
+		</view>
+	</t-cell>
+</t-cell-group>
+<custom-tab-bar pageCur="{{pageCur}}"></custom-tab-bar>
+

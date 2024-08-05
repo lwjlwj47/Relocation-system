@@ -1,0 +1,24 @@
+<!--pages/firstparty/program/program.wxml-->
+<view class="search">
+  <t-search placeholder="请输入企事业单位名称" />
+</view>
+<t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel label="高校" value="0" />
+  <t-tab-panel label="企事业单位" value="1" />
+</t-tabs>
+<view class='card'>
+	<view wx:for="{{unit}}">
+		<view class="image">
+			<t-image src="{{item.image}}"></t-image>
+		</view>
+		<view>
+				<text>{{unit.name}}</text>
+				<view>
+					<t-icon name="folder" size="48rpx" />
+					<text>项目数</text>
+					<text>{{item.number}}</text>
+				</view>
+			</view>
+	</view>
+</view>
+<custom-tab-bar pageCur="{{pageCur}}"></custom-tab-bar>

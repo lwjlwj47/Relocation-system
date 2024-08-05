@@ -1,0 +1,26 @@
+<!--pages/first/first.wxml-->
+<!--<navigation-bar navigationBackgroundColor="{{navigationBackgroundColor}}" navigationBarTitleText="{{navigationBarTitleText}}"  background-color="#8C69CD"></navigation-bar>-->
+
+
+
+<!-- <view class="navigation" style="background-color: {{navigationBackgroundColor}}; height: {{paddingTopNum}}px; padding-top: {{statusBarHeight}}px;">
+	<!-- 左边的返回按钮图标 -->
+	<!-- <view class='navigation_bar_left' bindtap="back">
+		<view class="iconfont icon-fanhuijian"></view>
+	</view>
+	<view class='navigation_bar_center'>
+		<view>{{navigationBarTitleText}}</view>
+	</view>
+</view>  -->
+<view class = "top-back">
+<view style="height: {{top_name_height}}px;"></view>
+<view class = "top-name" style="height: {{name_height}}px;">登录主页</view>
+<view class="login">
+	<image class ="avatar"src="/image/avatar.png"></image>
+	<view  class ="loginin" bind:tap="login">点击登录</view>
+</view>
+</view>
+
+<button bindtap="go">点击跳转</button>
+
+<custom-tab-bar></custom-tab-bar>

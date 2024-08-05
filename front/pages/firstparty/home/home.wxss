@@ -1,0 +1,126 @@
+/* pages/firstparty/home/home.wxss */
+.top-back{
+	left: 0px;
+	top: 0px;
+	width: 750rpx;
+	opacity: 1;
+}
+.top-name{
+	align-items: center;
+	opacity: 1;
+	/** 文本1 */
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: 0px;
+	/* line-height: 20.4px; */
+	color: rgba(51, 51, 51, 1);
+	display: inline;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	vertical-align: top;
+}
+.avatar{
+	width: 60rpx;
+	height: 60rpx;
+	padding: 6rpx 6rpx 14rpx 24rpx;
+}
+.top{
+	display: flex;
+	flex-direction: row;
+}
+.img {
+  width: 100%;
+	height: 100%;
+}
+.Carousel{
+	margin: 32rpx 24rpx 32rpx 24rpx;
+	/* height: 344rpx; */
+}
+.introduce{
+	padding: 0 32rpx 0 32rpx;
+	height: 328rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between	;
+}
+.introduce-1
+{
+	width: 328rpx;
+	height: 328rpx;
+	border-radius: 8px;
+	background: linear-gradient(180deg, rgba(255, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+.introduce-image
+{
+	width: 120rpx;
+	height: 120rpx;
+	background: linear-gradient(131.5deg, rgba(58, 62, 77, 1) 0%, rgba(204, 33, 41, 1) 100%);
+	border-radius: 50%;
+	margin: 52rpx 104rpx 30rpx 104rpx;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	vertical-align: top;
+}
+.introduce-image-1{
+	width: 68rpx;height: 60rpx;
+}
+.introduce-button{
+	width: 176rpx;
+	height: 64rpx;
+	margin: 0rpx 76rpx 0rpx 76rpx;
+	border-radius: 61px;
+	opacity: 1;
+	background: linear-gradient(131.5deg, rgba(58, 62, 77, 1) 0%, rgba(204, 33, 41, 1) 100%);
+	/** 文本1 */
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 60rpx;
+	color: rgba(255, 255, 255, 1);
+	/* text-align: left; */
+	/* vertical-align: top; */
+
+}
+.server{
+	padding: 32rpx 34rpx 0 34rpx;
+}
+.word-line{
+	width: 682rpx;
+	height: 80rpx;
+	border-radius: 7px 7px, 0px, 0px;
+	background: linear-gradient(180deg, rgba(255, 242, 242, 1) 0%, rgba(255, 242, 242, 0.1) 100%);
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 21.6px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.word
+{
+	padding: 18rpx 0rpx 18rpx 24rpx;
+}
+.case{
+	width: 686rpx;
+	height: 208rpx;
+	display: flex;
+	flex-direction: row;
+}
+.case-image{
+	 padding: 24rpx; 
+	width: 236rpx;
+	height: 160rpx;
+	border-radius:4px;
+	/* width: 100%; */
+}
+.case-introduce
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 24rpx;
+
+}
