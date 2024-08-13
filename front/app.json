@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/firstparty/home/home",
     "pages/first/first",
+    "pages/firstparty/home/home",
     "pages/manage/home/home",
     "pages/employee/home/home",
     "pages/employee/apply/apply",

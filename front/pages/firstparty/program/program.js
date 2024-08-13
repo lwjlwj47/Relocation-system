@@ -1,4 +1,4 @@
-// pages/firstparty/program_detail/program_detail.js
+// pages/firstparty/program/program.js
 Page({
 
   /**
@@ -6,27 +6,34 @@ Page({
    */
   data: {
     pageCur:"program",
-    value:"",
-    program:[
+    value:"0",
+    unit_school:[
       {
-        program_name:"总项目名称",
-        first_name:"甲方负责人名称",
-        second_name:"乙方负责人名称",
-        start_data:"2024.06.10",
-        end_data:"2024.06.16",
-        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
-
+        image:"/image/unit.png",
+        name:"中国民航大学",
+        number:10
+      },
+      {
+        image:"/image/unit.png",
+        name:"天津大学",
+        number:20
+      },
+      {
+        image:"/image/unit.png",
+        name:"天津医科大学",
+        number:50
+      },
+      {
+        image:"/image/unit.png",
+        name:"南开大学",
+        number:120
       }
     ],
-    program_done:[
+    unit_conpany:[
       {
-        program_name:"总项目名称",
-        first_name:"甲方负责人名称",
-        second_name:"乙方负责人名称",
-        start_data:"2024.06.10",
-        end_data:"2024.06.16",
-        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
-
+        image:"/image/unit.png",
+        name:"天津共享信息咨询有限公司",
+        number:24
       }
     ]
   },
@@ -86,6 +93,20 @@ Page({
   onShareAppMessage() {
 
   },
+  methods:{
+    onTabsChange() {
+      // console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
+      console.log("change")
+    },
+
+    onTabsClick() {
+      console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
+    },
+
+    onStickyScroll(event) {
+      console.log(event.detail);
+    },
+  },
   onTabsChange(event) {
     console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
     this.setData({
@@ -93,10 +114,10 @@ Page({
     })
     console.log(this.data.value)
   },
-  goto()
+  gotodetail()
   {
     wx.navigateTo({
-      url: '/pages/firstparty/program_detail_1/program_detail_1',
+      url: '/pages/manage/program_detail/program_detail',
     })
   }
 })
