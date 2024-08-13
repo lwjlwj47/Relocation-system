@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"运输信息",
+  "usingComponents": {
+    "t-image": "/miniprogram_npm/tdesign-miniprogram/image/image"
+  }
+}

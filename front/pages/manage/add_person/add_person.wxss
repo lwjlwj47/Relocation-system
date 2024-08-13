@@ -1,0 +1,7 @@
+/* pages/manage/add_person/add_person.wxss */
+.button
+{
+	position: fixed !important;
+	bottom: 0;
+	width: 100%;
+}

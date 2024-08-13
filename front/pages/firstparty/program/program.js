@@ -1,4 +1,4 @@
-// pages/firstparty/program/program.js
+// pages/firstparty/program_detail/program_detail.js
 Page({
 
   /**
@@ -6,9 +6,27 @@ Page({
    */
   data: {
     pageCur:"program",
-    unit:[
+    value:"",
+    program:[
       {
-        image:""
+        program_name:"总项目名称",
+        first_name:"甲方负责人名称",
+        second_name:"乙方负责人名称",
+        start_data:"2024.06.10",
+        end_data:"2024.06.16",
+        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
+
+      }
+    ],
+    program_done:[
+      {
+        program_name:"总项目名称",
+        first_name:"甲方负责人名称",
+        second_name:"乙方负责人名称",
+        start_data:"2024.06.10",
+        end_data:"2024.06.16",
+        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
+
       }
     ]
   },
@@ -68,17 +86,17 @@ Page({
   onShareAppMessage() {
 
   },
-  methods:{
-    onTabsChange(event) {
-      console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
-    },
-
-    onTabsClick(event) {
-      console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
-    },
-
-    onStickyScroll(event) {
-      console.log(event.detail);
-    },
+  onTabsChange(event) {
+    console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
+    this.setData({
+      value:event.detail.value
+    })
+    console.log(this.data.value)
+  },
+  goto()
+  {
+    wx.navigateTo({
+      url: '/pages/firstparty/program_detail_1/program_detail_1',
+    })
   }
 })

@@ -1,0 +1,68 @@
+<!--pages/manage/examine/examine.wxml-->
+<t-input label="项目名称" placeholder="请输入项目名称" value="{{name}}" bind:change="namechange" align="right" />
+<t-cell class="mb-16" title="选择报销类型" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
+<t-picker
+  visible="{{cityVisible}}"
+  value="{{cityValue}}"
+  data-key="city"
+  title="选择报销类型"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{citys}}" />
+</t-picker>
+<t-input label="报销金额" type="number" placeholder="请输入报销金额" value="{{money}}" bind:change="moneychange" align="right" />
+<!-- 年月日 -->
+<t-cell
+  title="选择日期"
+  hover
+  note="{{dateText || ''}}"
+  arrow
+  data-mode="date"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+<t-date-time-picker
+  title="选择日期"
+  visible="{{dateVisible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+<!-- 上传图片-->
+<view class="wrapper">
+<view class="upload-name"> 上传图片 </view>
+  <t-upload
+    media-type="{{['video','image']}}"
+    files="{{originFiles}}"
+    gridConfig="{{gridConfig}}"
+    bind:success="handleSuccess"
+    bind:remove="handleRemove"
+    bind:click="handleClick"
+    bind:sort-end="handleSortEnd"
+  />
+</view>
+
+
+<!-- 输入备注 -->
+<view class="input-example">
+  <view class="input-example__label">备注</view>
+  <t-input
+    placeholder="请输入文字"
+    borderless="{{true}}"
+    style="{{style}}"
+  />
+</view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;">提交</t-button>
+</view>

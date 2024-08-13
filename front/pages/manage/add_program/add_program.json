@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"项目添加",
+  "usingComponents": {
+    "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input"
+  }
+}

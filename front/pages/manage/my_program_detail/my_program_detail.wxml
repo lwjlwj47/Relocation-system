@@ -1,0 +1,81 @@
+<!--pages/firstparty/program_detail/program_detail.wxml-->
+<view class="search">
+  <t-search placeholder="请输入项目名称" shape="round"/>
+</view>
+<t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel label="未完成" value="0" />
+  <t-tab-panel label="已完成" value="1" />
+</t-tabs>
+<!-- 未完成的项目 -->
+<view class="card" wx:if="{{value==0}}">
+	<view class="detail" wx:for="{{program}}">
+	<view class="detail-container">
+	<view class="done">
+		<view class="program-name">
+		{{item.program_name}}
+		</view>
+		<t-icon name="delete" size="24" data-name="{{item}}" bind:click="onIconTap" />
+	</view>
+		<view class="person">
+		<view class="theperson">{{item.first_name}}</view>
+		<view class="theperson">{{item.second_name}}</view>
+		</view>
+		<view class="data">
+		<view>项目日期</view>
+		<view>{{item.start_data}}-{{item.end_data}}</view>
+		</view>
+		<view>
+		<view class="detail-name">项目详情</view>
+		<t-textarea
+  t-class="external-class"
+  value="{{item.detail}}"
+	maxcharacter="200"
+  disableDefaultPadding="{{true}}"
+	style="height: 120rpx; padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+		</view>
+		<view class="button">
+		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
+		</view>
+		</view>
+	</view>
+</view>
+<!-- 已完成的项目 -->
+<view class="card" wx:if="{{value==1}}">
+	<view class="detail" wx:for="{{program_done}}">
+	<view class="detail-container">
+		<view class="done">
+		<view class="program-name">
+		{{item.program_name}}
+		</view>
+		<view class="done-word">已完成</view>
+		</view>
+		<view class="person">
+		<view class="theperson">{{item.first_name}}</view>
+		<view class="theperson">{{item.second_name}}</view>
+		</view>
+		<view class="data">
+		<view>项目日期</view>
+		<view>{{item.start_data}}-{{item.end_data}}</view>
+		</view>
+		<view>
+		<view class="detail-name">项目详情</view>
+		<t-textarea
+  t-class="external-class"
+  value="{{item.detail}}"
+	maxcharacter="200"
+  disableDefaultPadding="{{true}}"
+	style="height: 120rpx; padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+		</view>
+		<view class="button">
+		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
+		</view>
+		</view>
+	</view>
+</view>
+<t-button theme="primary" size="large" class="add" bind:tap="add_program">添加项目</t-button>

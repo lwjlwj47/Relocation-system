@@ -1,0 +1,3 @@
+<!--pages/manage/add_program/add_program.wxml-->
+<t-input label="事企业" placeholder="请输入项目名称" align="right" />
+<t-input label="项目名称" placeholder="请输入项目名称" align="right" />

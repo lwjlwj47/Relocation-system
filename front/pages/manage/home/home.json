@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "custom-tab-bar": "/components/custom-tab-bar/custom-tab-bar",
+    "t-swiper": "/miniprogram_npm/tdesign-miniprogram/swiper/swiper",
+    "t-swiper-nav": "/miniprogram_npm/tdesign-miniprogram/swiper-nav/swiper-nav",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-image": "/miniprogram_npm/tdesign-miniprogram/image/image"
+  }
+}

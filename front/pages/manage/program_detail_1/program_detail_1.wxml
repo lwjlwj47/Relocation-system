@@ -1,0 +1,96 @@
+<!--pages/firstparty/program_detail_1/program_detail_1.wxml-->
+<view class="card">
+	<view class="detail" >
+	<view class="detail-container">
+		<view class="program-name">
+		{{program.program_name}}
+		</view>
+		<view class="person">
+		<view class="theperson">{{program.first_name}}</view>
+		<view class="theperson">{{program.second_name}}</view>
+		</view>
+		<view class="data">
+		<view>项目日期</view>
+		<view>{{program.start_data}}-{{program.end_data}}</view>
+		</view>
+		<view>
+		<view class="detail-name">项目详情</view>
+		<t-textarea
+	wx:if="{{showon}}"
+  t-class="external-class"
+  value="{{program.detail}}"
+	maxcharacter="70"
+  disableDefaultPadding="{{true}}"
+	style="height: 120rpx; padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+	<view class="link-example" wx:if="{{showon}}" >
+	<view  bind:tap="changedetail" class="showon">展开</view>
+</view>
+		<t-textarea
+		wx:if="{{!showon}}"
+  t-class="external-class"
+  value="{{program.detail}}"
+	maxcharacter="200"
+  disableDefaultPadding="{{true}}"
+	autosize="{{autosize}}"
+	style=" padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+	<view class="link-example" wx:if="{{!showon}}" >
+	<view  bind:tap="changedetail" class="showon">收起</view>
+</view>
+		</view>
+		<t-divider />
+	<view>
+	<view class="room-name">项目房间</view>
+	<view class='room'>
+	<t-button theme="primary" variant="outline" size="small"wx:for="{{current_room}}" bind:tap="gotoroom">
+	房间编号{{item.number}}
+	</t-button>
+	</view>
+	<view class="on" wx:if="{{six}}" bind:tap="changeall">
+	<text>展开全部</text>
+	<t-icon name="chevron-down" size="24" data-name="{{item}}" bind:click="onIconTap" />
+	</view>
+	<view class="on" wx:if="{{!six}}" bind:tap="changesix">
+	<text>收起</text>
+	<t-icon name="chevron-up" size="24" data-name="{{item}}" bind:click="onIconTap" />
+	</view>
+	</view>
+
+	<t-divider />
+	<view>
+	<view class='other-title'>其他信息</view>
+	<view class="other">
+<view class='box' style="background-color: rgba(255, 187, 1, 1);" bind:tap="gotocar">
+<view class="introduce-image" >
+  <image src="/image/truck-2.png" class="introduce-image-1"></image>
+</view>
+	<view class="my">
+	<view  class ="name" >运输信息</view>
+	<view class="click">
+	<view class="phone">查看</view>
+	<t-icon name="chevron-right" size="18" data-name="{{item}}" bind:click="onIconTap" style="color: rgba(255, 255, 255, 0.5);" />
+	</view>
+	</view>
+</view>
+<view class='box' style="background-color: rgba(0, 133, 254, 1);" bind:tap="gotoequipment">
+<view class="introduce-image">
+  <image src="/image/phone.png" class="introduce-image-1"></image>
+</view>
+	<view class="my">
+	<view  class ="name" >设备信息</view>
+	<view class="click">
+	<view class="phone">查看</view>
+	<t-icon name="chevron-right" size="18" data-name="{{item}}" bind:click="onIconTap" style="color: rgba(255, 255, 255, 0.5);"/>
+	</view>
+	</view>
+</view>
+</view>
+	</view>
+		</view>
+	</view>
+</view>

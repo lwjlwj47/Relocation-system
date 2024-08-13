@@ -1,0 +1,79 @@
+/* pages/firstparty/program/program.wxss */
+page{
+	background-color:rgba(187, 194, 193, 0.493);
+}
+.search{
+	padding: 0rpx 24rpx 0rpx 24rpx;
+	background-color: azure;
+}
+.card{
+	margin: 32rpx 32rpx 0 32rpx;
+}
+.the-card{
+	display: flex;
+	flex-direction: row;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 1);
+	margin: 32rpx 0 32rpx 0;
+	height: 204rpx;
+}
+.image{
+	width: 172rpx;
+	height: 172rpx;
+}
+.image-1{
+	width: 172rpx;
+	height: 172rpx;
+	margin: 16rpx;
+}
+.name{
+	display: flex;
+	flex-direction: column;
+	margin: 16rpx 0 24rpx 0rpx;
+}
+.number{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-radius: 2px;
+	background: rgba(255, 242, 242, 1);
+	width: 192rpx;
+	height: 44rpx;
+	padding: 2rpx;
+}
+.unit-name{
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0px;
+	line-height: 25.2px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+	margin-bottom: 16rpx;
+}
+.number-describer
+{
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 16.8px;
+	color: rgba(204, 33, 41, 1);
+	text-align: left;
+	vertical-align: top;
+	padding: 6rpx 0rpx 0rpx 0rpx;
+}
+.unit-number
+{
+	font-size: 18px;
+	width: 56rpx;
+	font-weight: 500;
+	letter-spacing: 0px;
+	line-height: 25.2px;
+	color: rgba(204, 33, 41, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.unit-icon
+{
+	padding: 6rpx;
+}

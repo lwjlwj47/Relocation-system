@@ -1,0 +1,38 @@
+<!--pages/manage/examine/examine.wxml-->
+<t-cell title="报销项目" hover note="{{name}}"  />
+<t-cell title="报销类型" hover note="{{data}}"  />
+<t-cell title="报销时间" hover note="{{type}}"  />
+<t-cell title="报销金额" hover note="{{money}}"  />
+<!-- 上传图片-->
+<view class="wrapper">
+<view class="upload-name"> 上传图片 </view>
+  <t-upload
+    disabled
+    media-type="{{['video','image']}}"
+    files="{{originFiles}}"
+    gridConfig="{{gridConfig}}"
+    bind:success="handleSuccess"
+    bind:remove="handleRemove"
+    bind:click="handleClick"
+    bind:sort-end="handleSortEnd"
+  />
+</view>
+
+
+<!-- 输入备注 -->
+<view class="input-example">
+  <view class="input-example__label">备注</view>
+  <t-textarea
+  t-class="external-class"
+  value="{{remark}}"
+	maxcharacter="200"
+  disableDefaultPadding="{{true}}"
+	style=" padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+</view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 50%;">通过</t-button>
+<t-button size="large" style="width: 50%;">不通过</t-button>
+</view>

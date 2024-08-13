@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText":"房间详情",
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-image": "/miniprogram_npm/tdesign-miniprogram/image/image",
+    "t-steps": "/miniprogram_npm/tdesign-miniprogram/steps/steps",
+    "t-step-item": "/miniprogram_npm/tdesign-miniprogram/step-item/step-item"
+  }
+}

@@ -1,0 +1,8 @@
+<!--pages/firstparty/message/message.wxml-->
+<view class="container">
+<view class="card" wx:for="{{message}}">
+	<view class="top">{{item.toptitle}}</view>
+	<view class="content">{{item.content}}</view>
+	<view class="time">{{item.time}}</view>
+</view>
+</view>

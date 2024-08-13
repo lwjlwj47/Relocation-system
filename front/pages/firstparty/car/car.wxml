@@ -1,0 +1,23 @@
+<!--pages/firstparty/car/car.wxml-->
+
+<view class="container">
+	<view wx:for="{{cars}}" class='car'>
+	<view class="car-name">
+		<t-image src="{{item.image}}" style="width:160rpx;height:160rpx" ></t-image>
+		<view style="margin-left: 24rpx;">
+		<view class="car-name-1">{{item.name}}</view>
+		<view class="car-time">使用时间:{{item.start_time}}-{{item.end_time}}</view>
+		</view>
+	</view>
+	<view class="car-info">
+	<view class="box">
+	<view>{{item.person}}</view>
+	<view class="remark">负责人</view>
+	</view>
+	<view class="box">
+	<view>{{item.info}}</view>
+	<view class="remark">车辆信息</view>
+	</view>
+</view>
+	</view>
+</view>
