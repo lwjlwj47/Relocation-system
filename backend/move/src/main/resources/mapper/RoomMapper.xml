@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.move.mapper.RoomMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.move.pojo.Room">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="roomId" column="room_id" jdbcType="INTEGER"/>
+            <result property="projectId" column="project_id" jdbcType="INTEGER"/>
+            <result property="personalId" column="personal_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,room_id,project_id,
+        personal_id
+    </sql>
+    <select id="queryRoomByProjectId" resultMap="BaseResultMap">
+        select * from room where project_id = #{projectId}
+    </select>
+</mapper>

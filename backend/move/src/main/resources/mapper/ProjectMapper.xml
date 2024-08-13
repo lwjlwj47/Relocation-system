@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.move.mapper.ProjectMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.move.pojo.Project">
+            <id property="projectId" column="project_id" jdbcType="INTEGER"/>
+            <result property="projectGrade" column="project_grade" jdbcType="INTEGER"/>
+            <result property="projectName" column="project_name" jdbcType="VARCHAR"/>
+            <result property="projectFirstPerson" column="project_first_person" jdbcType="VARCHAR"/>
+            <result property="projectSecondPerson" column="project_second_person" jdbcType="VARCHAR"/>
+            <result property="projectStartTime" column="project_start_time" jdbcType="DATE"/>
+            <result property="projectEndTime" column="project_end_time" jdbcType="DATE"/>
+            <result property="projectRemark" column="project_remark" jdbcType="VARCHAR"/>
+            <result property="projectIsDone" column="project_is_done" jdbcType="INTEGER"/>
+            <result property="projectUnit" column="project_unit" jdbcType="VARCHAR"/>
+            <result property="projectUnitType" column="project_unit_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+<!--    <sql id="Base_Column_List">-->
+<!--        project_id,project_grade,project_name,-->
+<!--        project_first_person,project_second_person,project_start_time,-->
+<!--        project_end_time,project_remark,project_is_done,-->
+<!--        project_unit-->
+<!--    </sql>-->
+
+    <select id="queryAllProject" resultMap="BaseResultMap">
+        SELECT * FROM project
+    </select>
+
+    <select id="queryProjectsByUnit" resultMap="BaseResultMap">
+        SELECT * FROM project WHERE project_unit = #{projectUnit}
+    </select>
+
+    <select id="findAllProjects" resultMap="BaseResultMap">
+        SELECT * FROM project
+    </select>
+    <select id="queryProjectsById" resultMap="BaseResultMap">
+        SELECT * FROM project WHERE project_id = #{projectId}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.move.mapper.EquipmentMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.move.pojo.Equipment">
+            <id property="equipmentId" column="equipment_id" jdbcType="INTEGER"/>
+            <result property="projectId" column="project_id" jdbcType="INTEGER"/>
+            <result property="equipmentName" column="equipment_name" jdbcType="VARCHAR"/>
+            <result property="roomId" column="room_id" jdbcType="INTEGER"/>
+            <result property="equipmentRemark" column="equipment_remark" jdbcType="VARCHAR"/>
+            <result property="equipmentRank" column="equipment_rank" jdbcType="VARCHAR"/>
+            <result property="equipmentProcess" column="equipment_process" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        equipment_id,project_id,equipment_name,
+        room_id,equipment_remark,equipment_rank,
+        equipment_process,equipment_image
+    </sql>
+    <select id="queryEquipmentByProId" resultMap="BaseResultMap">
+        select * from equipment where project_id = #{projectId}
+    </select>
+    <select id="queryEquipmentByRoomId" resultMap="BaseResultMap">
+        select * from equipment where project_id = #{projectId} and room_id = #{roomId}
+    </select>
+
+</mapper>
