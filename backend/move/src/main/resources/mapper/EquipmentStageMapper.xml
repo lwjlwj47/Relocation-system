@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.move.mapper.EquipmentStageMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.move.pojo.EquipmentStage">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="equipmentId" column="equipment_id" jdbcType="INTEGER"/>
+            <result property="stage" column="stage" jdbcType="INTEGER"/>
+            <result property="stageImage" column="stage_image" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,equipment_id,stage,
+        stage_image
+    </sql>
+    <insert id="insertEquipmentStage" parameterType="com.example.move.pojo.EquipmentStage">
+        insert into equipment_stage (equipment_id, stage, stage_image) values (#{equipmentId}, #{stage}, #{stageImage})
+    </insert>
+    <select id="queryStageByEquipmentId" resultMap="BaseResultMap">
+        select * from equipment_stage where equipment_id = #{equipmentId}
+    </select>
+</mapper>
