@@ -2,6 +2,7 @@ package com.example.move.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.move.pojo.Equipment;
+import com.example.move.pojo.EquipmentStage;
 import com.example.move.service.EquipmentService;
 import com.example.move.mapper.EquipmentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,16 @@ public class EquipmentServiceImpl extends ServiceImpl<EquipmentMapper, Equipment
     @Override
     public List<Equipment> queryEquipmentByRoomId(int projectId, int roomId) {
         return equipmentMapper.queryEquipmentByRoomId(projectId, roomId);
+    }
+
+    @Override
+    public void addEquipment(Equipment equipment) {
+        equipmentMapper.addEquipment(equipment);
+    }
+
+    @Override
+    public void updateStage(EquipmentStage equipmentStage) {
+        equipmentMapper.updateStage(equipmentStage);
     }
 }
 

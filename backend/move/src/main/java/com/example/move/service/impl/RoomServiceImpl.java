@@ -25,6 +25,12 @@ public class RoomServiceImpl extends ServiceImpl<RoomMapper, Room>
     public List<Room> queryRoomByProjectId(int projectId) {
         return roomMapper.queryRoomByProjectId(projectId);
     }
+
+    @Override
+    public void addRoom(int projectId, int roomId, int personalId) {
+        roomMapper.addRoom(projectId, roomId,personalId);
+    }
+
 }
 
 

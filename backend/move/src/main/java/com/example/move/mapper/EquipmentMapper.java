@@ -2,6 +2,7 @@ package com.example.move.mapper;
 
 import com.example.move.pojo.Equipment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.move.pojo.EquipmentStage;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public interface EquipmentMapper extends BaseMapper<Equipment> {
 
     List<Equipment> queryEquipmentByRoomId(int projectId, int roomId);
 
+    void addEquipment(Equipment equipment);
+
+    void updateStage(EquipmentStage equipmentStage);
 }
 
 

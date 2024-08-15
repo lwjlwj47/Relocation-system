@@ -16,6 +16,8 @@ import java.util.List;
 public interface RoomMapper extends BaseMapper<Room> {
 
     List<Room> queryRoomByProjectId(int projectId);
+
+    void addRoom(int projectId, int roomId, int personalId);
 }
 
 

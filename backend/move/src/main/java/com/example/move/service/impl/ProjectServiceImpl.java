@@ -37,6 +37,11 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project>
         return projectMapper.queryProjectsById(projectId);
     }
 
+    @Override
+    public void addProject(Project project) {
+        projectMapper.addProject(project);
+    }
+
 
 }
 

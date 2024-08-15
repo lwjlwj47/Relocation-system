@@ -2,6 +2,7 @@ package com.example.move.service;
 
 import com.example.move.pojo.Equipment;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.move.pojo.EquipmentStage;
 
 import java.util.List;
 
@@ -15,4 +16,8 @@ public interface EquipmentService extends IService<Equipment> {
     List<Equipment> queryEquipmentByProId(int projectId);
 
     List<Equipment> queryEquipmentByRoomId(int projectId, int roomId);
+
+    void addEquipment(Equipment equipment);
+
+    void updateStage(EquipmentStage equipmentStage);
 }

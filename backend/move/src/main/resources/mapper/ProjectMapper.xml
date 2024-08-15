@@ -17,8 +17,36 @@
             <result property="projectUnit" column="project_unit" jdbcType="VARCHAR"/>
             <result property="projectUnitType" column="project_unit_type" jdbcType="INTEGER"/>
     </resultMap>
+<!--    <insert id="addProject">-->
+<!--        -->
+<!--    </insert>-->
+    <insert id="addProject" parameterType="com.example.move.pojo.Project">
+        INSERT INTO project (
+            project_grade,
+            project_name,
+            project_first_person,
+            project_second_person,
+            project_start_time,
+            project_end_time,
+            project_remark,
+            project_is_done,
+            project_unit,
+            project_unit_type
+        ) VALUES (
+                     #{projectGrade},
+                     #{projectName},
+                     #{projectFirstPerson},
+                     #{projectSecondPerson},
+                     #{projectStartTime},
+                     #{projectEndTime},
+                     #{projectRemark},
+                     #{projectIsDone},
+                     #{projectUnit},
+                     #{projectUnitType}
+                 )
+    </insert>
 
-<!--    <sql id="Base_Column_List">-->
+    <!--    <sql id="Base_Column_List">-->
 <!--        project_id,project_grade,project_name,-->
 <!--        project_first_person,project_second_person,project_start_time,-->
 <!--        project_end_time,project_remark,project_is_done,-->

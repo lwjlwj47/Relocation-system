@@ -19,6 +19,28 @@
         room_id,equipment_remark,equipment_rank,
         equipment_process,equipment_image
     </sql>
+    <insert id="addEquipment" useGeneratedKeys="true" keyProperty="equipmentId">
+        INSERT INTO equipment (
+            project_id,
+            equipment_name,
+            room_id,
+            equipment_remark,
+            equipment_rank,
+            equipment_image,
+            equipment_process
+        ) VALUES (
+                     #{projectId},
+                     #{equipmentName},
+                     #{roomId},
+                     #{equipmentRemark},
+                     #{equipmentRank},
+                     #{equipmentImage},
+                     #{equipmentProcess}
+                 )
+    </insert>
+    <update id="updateStage" parameterType="com.example.move.pojo.EquipmentStage">
+        update equipment set equipment_process = #{stage} where equipment_id = #{equipmentId}
+    </update>
     <select id="queryEquipmentByProId" resultMap="BaseResultMap">
         select * from equipment where project_id = #{projectId}
     </select>

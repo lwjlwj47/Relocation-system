@@ -17,4 +17,6 @@ public interface ProjectService extends IService<Project> {
     List<Project> queryProjectsByUnit(String projectUnit);
 
     List<Project> queryProjectById(Integer projectId);
+
+    void addProject(Project project);
 }

@@ -54,6 +54,7 @@ public class Equipment implements Serializable {
      * 设备头像
      */
     private byte[] equipmentImage;
+//    private String equipmentImage;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

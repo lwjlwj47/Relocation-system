@@ -15,6 +15,10 @@
         id,room_id,project_id,
         personal_id
     </sql>
+    <insert id="addRoom">
+        INSERT INTO room (room_id, project_id, personal_id)
+        VALUES (#{roomId}, #{projectId}, #{personalId})
+    </insert>
     <select id="queryRoomByProjectId" resultMap="BaseResultMap">
         select * from room where project_id = #{projectId}
     </select>

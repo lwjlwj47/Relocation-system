@@ -25,6 +25,8 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> queryProjectsByUnit(String projectUnit);
 
     List<Project> queryProjectsById(Integer projectId);
+
+    void addProject(Project project);
 }
 
 
