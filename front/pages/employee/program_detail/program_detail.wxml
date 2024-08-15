@@ -1,0 +1,36 @@
+<!--pages/employee/program_detail/program_detail.wxml-->
+<view class="search">
+  <t-search placeholder="请输入项目名称" shape="round"/>
+</view>
+<view class="card" wx:if="{{value==0}}">
+	<view class="detail" wx:for="{{program}}">
+	<view class="detail-container">
+		<view class="program-name">
+		{{item.program_name}}
+		</view>
+		<view class="person">
+		<view class="theperson">{{item.first_name}}</view>
+		<view class="theperson">{{item.second_name}}</view>
+		</view>
+		<view class="data">
+		<view>项目日期</view>
+		<view>{{item.start_data}}-{{item.end_data}}</view>
+		</view>
+		<view>
+		<view class="detail-name">项目详情</view>
+		<t-textarea
+  t-class="external-class"
+  value="{{item.detail}}"
+	maxcharacter="200"
+  disableDefaultPadding="{{true}}"
+	style="height: 120rpx; padding: 16rpx;"
+	class="output"
+  disabled
+	/>
+		</view>
+		<view class="button">
+		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
+		</view>
+		</view>
+	</view>
+</view>

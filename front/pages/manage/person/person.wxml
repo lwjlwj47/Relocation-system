@@ -1,0 +1,23 @@
+<!--pages/manage/person/person.wxml-->
+<view class="search">
+  <t-search placeholder="请输入人员名称"  shape="round"/>
+</view>
+<view wx:for="{{person}}">
+<view class="equipment-name">
+		<t-image src="/image/avatar.png" style="width:160rpx;height:160rpx;margin:30rpx" ></t-image>
+
+		<view class="info-container">
+		<view class="name">
+		<view class="equipment-name-1">姓名：{{item.name}}</view>
+		<t-icon name="delete" size="24" data-name="{{item}}" bind:click="onIconTap" />
+		</view>
+		<view class="person">
+			<view class="person-1">性别:{{item.sex}}</view>
+		<view class="person-1">手机号码:{{item.phone}}</view>
+		<view class="person-1">职位:{{item.position}}</view>
+		<view class="person-1">身份证号:{{item.card_number}}</view>
+		</view>
+		</view>
+	</view>
+	</view>
+	<t-button theme="primary" size="large" class="button" bind:tap="add">添加人员</t-button>

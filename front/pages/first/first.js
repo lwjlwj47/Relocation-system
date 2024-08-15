@@ -105,6 +105,30 @@ Page({
       url: '/pages/firstparty/my/my',
     })
     console.log("error")
+  },
+  getPhoneNumber (e) {
+    console.log(e.detail.code)  // 动态令牌
+    console.log(e.detail.errMsg) // 回调信息（成功失败都会返回）
+    console.log(e.detail.errno)  // 错误码（失败时返回）
+  },
+  login()
+  {
+    wx.login({
+      success: (res) => {
+        console.log(res)
+        wx.request({
+          url: 'http://localhost:8080/login/queryProjectInfo?code='+res.code,
+          method:'GET',
+          success(res){
+            console.log(res.data)
+          },
+          fail(res){
+            console.log(res)
+          }
+        })
+      },
+    })
   }
+
 
 })

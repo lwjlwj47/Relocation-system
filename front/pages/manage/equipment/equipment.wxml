@@ -1,0 +1,22 @@
+<!--pages/firstparty/equipment/equipment.wxml-->
+<view class="container">
+	<view wx:for="{{equipment}}" class='car'>
+	<view class="number-container">
+	<view class="room-number">房间编号{{item.number}}</view>
+	</view>
+	<view class="equipment-info">
+	<view class="equipment-name">
+		<t-image src="{{item.image}}" style="width:160rpx;height:160rpx" ></t-image>
+		<view style="margin-left: 16rpx;">
+		<view class="equipment-name-1">{{item.name}}</view>
+		<t-button variant="outline"  theme="primary"   size="small" class="rank">{{item.rank}}</t-button>
+		<view class="person">
+		<view class="person-1">负责人</view>
+		<view class="person-2">{{item.person}}</view>
+		</view>
+		</view>
+	</view>
+	<view class="remark">备注:<text class="remark-1">{{item.remark}}</text></view>
+	</view>
+	</view>
+</view>

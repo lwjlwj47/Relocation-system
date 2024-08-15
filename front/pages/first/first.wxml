@@ -23,4 +23,5 @@
 
 <button bindtap="go">点击跳转</button>
 
-<custom-tab-bar></custom-tab-bar>
+<button bind:tap="login">登录</button>
+

@@ -1,0 +1,3 @@
+<!--pages/employee/my/my.wxml-->
+<view></view>
+<custom-tab-bar pageCur="{{pageCur}}" index="3"></custom-tab-bar>

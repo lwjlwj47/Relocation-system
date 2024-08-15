@@ -1,0 +1,44 @@
+<!--pages/firstparty/room/room.wxml-->
+<view class="card">
+<view class="detail-container">
+	<view class="program-name">
+		房间编号{{number}}
+		</view>
+		<view class="person">
+		<view class="theperson">{{name}}</view>
+	</view>
+<view>
+<view class="equipment-top">设备信息</view>
+<view wx:for="{{equipment}}" class="equipment">
+<view class="equipment-info">
+	<view>
+	<view class="equipment-name">
+	<view class="equipment-name-1">{{item.name}}</view>
+	<t-button variant="outline"  theme="primary" class="button" bind:tap="goto" size="small" class="rank">{{item.rank}}</t-button>
+	</view>
+	<view class="equipment-name" style="margin-top: 16rpx;">
+	<view class="equipment-remark">备注：</view>
+	<view class="equipment-remark-1">{{item.remark}}</view>
+	</view>
+	</view>
+	<view>
+		<t-image src="{{item.image}}" class="image" style="width: 96rpx; height: 96rpx;"></t-image>
+	</view>
+</view>
+<t-divider />
+<view class="step">
+<wxs module="_">
+  module.exports.getText = function(value, curr) { if (value > curr) return "已完成步骤" ; if (value == curr)
+  return'当前步骤'; return '未完成步骤'; }
+</wxs>
+
+<view class="block">
+  <t-steps layout="vertical" current="{{first}}" bind:change="onFirstChange">
+    <t-step-item wx:for="{{my_steps}}" wx:key="index" title="{{my_steps[index]}}"/>
+  </t-steps>
+</view>
+</view>
+</view>
+</view>
+</view>
+</view>

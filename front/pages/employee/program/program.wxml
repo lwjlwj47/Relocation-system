@@ -1,0 +1,44 @@
+<!--pages/employee/program/program.wxml-->
+<view class="search">
+  <t-search placeholder="请输入企事业单位名称"  shape="round"/>
+</view>
+<t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+  <t-tab-panel label="高校" value="0" />
+  <t-tab-panel label="企事业单位" value="1" />
+</t-tabs>
+<!-- 高校 -->
+<view class='card' wx:if="{{value==0}}">
+	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail">
+		<view class="image-1">
+			<t-image src="{{item.image}}" class="image"></t-image>
+		</view>
+		<view class="name">
+				<text class="unit-name">{{item.name}}</text>
+				<view class="number">
+					<t-icon name="folder" size="30rpx" class="unit-icon" style="color: rgba(204, 33, 41, 1);"/>
+					<text class="number-describer">项目数</text>
+					<text class="unit-number">{{item.number}}</text>
+				</view>
+			</view>
+	</view>
+</view>
+<!-- 企事业单位 -->
+<view class='card' wx:if="{{value==1}}">
+	<view wx:for="{{unit_conpany}}" class="the-card" bind:tap="gotodetail">
+		<view class="image-1">
+			<t-image src="{{item.image}}" class="image"></t-image>
+		</view>
+		<view class="name">
+				<text class="unit-name">{{item.name}}</text>
+				<view class="number">
+					<t-icon name="folder" size="30rpx" class="unit-icon" style="color: rgba(204, 33, 41, 1);"/>
+					<text class="number-describer">项目数</text>
+					<text class="unit-number">{{item.number}}</text>
+				</view>
+			</view>
+	</view>
+</view>
+
+
+
+<custom-tab-bar pageCur="{{pageCur}}" index="3"></custom-tab-bar>

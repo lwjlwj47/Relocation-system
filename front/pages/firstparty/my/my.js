@@ -73,5 +73,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  gotomessage()
+  {
+    wx.navigateTo({
+      url: '/pages/firstparty/message/message',
+    })
   }
 })

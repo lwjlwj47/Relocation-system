@@ -118,5 +118,17 @@ Page({
       url: '/pages/firstparty/my/my',
     })
     console.log("error")
+  },
+  profile()
+  {
+    wx.navigateTo({
+      url: '/pages/company_profile/company_profile',
+    })
+  },
+  program()
+  {
+    wx.switchTab({
+      url: '/pages/firstparty/program/program',
+    })
   }
 })

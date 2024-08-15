@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText":"报销审查",
+  "usingComponents": {
+    "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input",
+    "t-cell": "/miniprogram_npm/tdesign-miniprogram/cell/cell",
+    "t-cell-group": "/miniprogram_npm/tdesign-miniprogram/cell-group/cell-group",
+    "t-picker": "/miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-item": "/miniprogram_npm/tdesign-miniprogram/picker-item/picker-item",
+    "t-date-time-picker": "/miniprogram_npm/tdesign-miniprogram/date-time-picker/date-time-picker",
+    "t-upload": "/miniprogram_npm/tdesign-miniprogram/upload/upload",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-textarea": "/miniprogram_npm/tdesign-miniprogram/textarea/textarea"
+  }
+}

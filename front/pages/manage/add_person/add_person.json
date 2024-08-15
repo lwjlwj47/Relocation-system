@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText":"人员添加",
+  "usingComponents": {
+    "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input",
+    "t-picker": "/miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-item": "/miniprogram_npm/tdesign-miniprogram/picker-item/picker-item",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-cell": "/miniprogram_npm/tdesign-miniprogram/cell/cell"
+  }
+}

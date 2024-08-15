@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText":"项目详情",
+  "usingComponents": {
+    "t-search": "/miniprogram_npm/tdesign-miniprogram/search/search",
+    "t-tabs": "/miniprogram_npm/tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "/miniprogram_npm/tdesign-miniprogram/tab-panel/tab-panel",
+    "t-textarea": "/miniprogram_npm/tdesign-miniprogram/textarea/textarea",
+    "t-link": "/miniprogram_npm/tdesign-miniprogram/link/link",
+    "t-divider": "/miniprogram_npm/tdesign-miniprogram/divider/divider",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon"
+  }
+}

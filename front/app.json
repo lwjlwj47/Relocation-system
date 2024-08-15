@@ -1,13 +1,41 @@
 {
   "pages": [
-    "pages/firstparty/program/program",
-    "pages/firstparty/home/home",
     "pages/first/first",
+    "pages/firstparty/home/home",
+    "pages/manage/home/home",
+    "pages/employee/home/home",
+    "pages/employee/apply/apply",
+    "pages/manage/person/person",
+    "pages/company_profile/company_profile",
+    "pages/firstparty/equipment/equipment",
+    "pages/firstparty/car/car",
+    "pages/firstparty/room/room",
+    "pages/firstparty/program_detail_1/program_detail_1",
+    "pages/firstparty/program_detail/program_detail",
+    "pages/firstparty/program/program",
     "pages/firstparty/my/my",
     "pages/index/index",
     "pages/logs/logs",
     "components/navigationbar/navigationbar",
-    "components/custom-tab-bar/custom-tab-bar"
+    "components/custom-tab-bar/custom-tab-bar",
+    "pages/firstparty/message/message",
+    "pages/manage/my/my",
+    "pages/manage/program/program",
+    "pages/manage/program_detail/program_detail",
+    "pages/manage/program_detail_1/program_detail_1",
+    "pages/manage/room/room",
+    "pages/manage/car/car",
+    "pages/manage/equipment/equipment",
+    "pages/manage/message/message",
+    "pages/manage/my_program/my_program",
+    "pages/manage/my_program_detail/my_program_detail",
+    "pages/manage/add_program/add_program",
+    "pages/manage/examine/examine",
+    "pages/manage/apply/apply",
+    "pages/manage/add_person/add_person",
+    "pages/employee/my/my",
+    "pages/employee/program/program",
+    "pages/employee/program_detail/program_detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -30,6 +58,30 @@
       },
       {
         "pagePath": "pages/firstparty/program/program",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/manage/program/program",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/manage/my/my",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/manage/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/employee/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/employee/my/my",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/employee/program/program",
         "text": "项目"
       }
     ]

@@ -1,0 +1,21 @@
+<!--pages/manage/add_person/add_person.wxml-->
+<t-input label="姓名" placeholder="请输入姓名" align="right" />
+<t-input label="手机号码" placeholder="请输入手机号码" align="right" />
+<t-input label="身份证号码" placeholder="请输入身份证号码" align="right" />
+<t-cell class="mb-16" title="选择职位" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
+<t-input label="微信名" placeholder="请输入微信名" align="right" />
+<t-picker
+  visible="{{cityVisible}}"
+  value="{{cityValue}}"
+  data-key="city"
+  title="选择城市"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{citys}}" />
+</t-picker>
+<t-button theme="primary" size="large" class="button">添加人员</t-button>

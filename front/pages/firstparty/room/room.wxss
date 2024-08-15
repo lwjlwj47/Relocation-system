@@ -1,0 +1,114 @@
+/* pages/firstparty/room/room.wxss */
+page{
+	background-color:rgba(187, 194, 193, 0.493);
+}
+.card{
+	margin: 12rpx 24rpx 0rpx 24rpx;
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10rpx;
+}
+.detail-container
+{
+	padding: 32rpx;
+}
+.program-name
+{
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0px;
+	line-height: 25.2px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.person
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 12rpx;
+	margin-bottom: 12rpx;
+}
+.theperson
+{
+	border-radius: 2px;
+	background: rgba(245, 245, 245, 1);
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 2rpx 12rpx 2rpx 12rpx;
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 16.8px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.equipment-top
+{
+	margin-top: 48rpx;
+	margin-bottom: 16rpx;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0px;
+	line-height: 19.6px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.equipment
+{
+	border-radius: 5px;
+	background: rgba(187, 194, 193, 0.493);
+}
+.equipment-info
+{
+	padding: 24rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.equipment-name
+{
+	display: flex;
+	flex-direction: row;
+}
+.rank
+{
+	height: 40rpx !important;
+	margin: 0rpx;
+}
+.equipment-name-1
+{
+	width: 128rpx;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0px;
+	line-height: 22.4px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+	margin-right: 16rpx;
+}
+.equipment-remark{
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 16.8px;
+	color: rgba(102, 102, 102, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.equipment-remark-1{
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 16.8px;
+	color: rgba(51, 51, 51, 1);
+	text-align: left;
+	vertical-align: top;
+}
+.step
+{
+	margin: 20rpx;
+}

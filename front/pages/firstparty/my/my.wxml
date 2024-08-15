@@ -16,11 +16,11 @@
 			<t-image src="/image/cell1.png" width="24" height="24"></t-image>
 		</view>
 		</t-cell>
-	<t-cell title="我的消息"  hover arrow >
+	<t-cell title="我的消息" bind:tap="gotomessage" hover arrow >
 	<view slot="left-icon">
 			<t-image src="/image/cell2.png" width="24" height="24"></t-image>
 		</view>
 	</t-cell>
 </t-cell-group>
-<custom-tab-bar pageCur="{{pageCur}}"></custom-tab-bar>
+<custom-tab-bar pageCur="{{pageCur}}"  index="1"></custom-tab-bar>
 
