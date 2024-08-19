@@ -17,7 +17,7 @@ public interface RoomMapper extends BaseMapper<Room> {
 
     List<Room> queryRoomByProjectId(int projectId);
 
-    void addRoom(int projectId, int roomId, int personalId);
+    void addRoom(int projectId, String roomId, int personalId);
 }
 
 

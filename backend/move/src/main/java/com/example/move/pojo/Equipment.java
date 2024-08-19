@@ -33,7 +33,7 @@ public class Equipment implements Serializable {
     /**
      * 房间id（该设备对应使用项目中具体房间）
      */
-    private Integer roomId;
+    private String roomId;
 
     /**
      * 设备备注
@@ -53,7 +53,7 @@ public class Equipment implements Serializable {
     /**
      * 设备头像
      */
-    private byte[] equipmentImage;
+    private String equipmentImage;
 //    private String equipmentImage;
 
     @TableField(exist = false)

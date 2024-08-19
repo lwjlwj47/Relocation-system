@@ -23,7 +23,7 @@ public class Room implements Serializable {
     /**
      * 房间id
      */
-    private Integer roomId;
+    private String roomId;
 
     /**
      * 项目id

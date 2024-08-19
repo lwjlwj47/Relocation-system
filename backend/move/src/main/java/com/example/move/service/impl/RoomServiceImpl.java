@@ -27,7 +27,7 @@ public class RoomServiceImpl extends ServiceImpl<RoomMapper, Room>
     }
 
     @Override
-    public void addRoom(int projectId, int roomId, int personalId) {
+    public void addRoom(int projectId, String roomId, int personalId) {
         roomMapper.addRoom(projectId, roomId,personalId);
     }
 

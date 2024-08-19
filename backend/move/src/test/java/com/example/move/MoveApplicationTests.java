@@ -15,14 +15,4 @@ class MoveApplicationTests {
     void contextLoads() {
     }
 
-    @Autowired
-    private UserMapper userMapper;
-
-    @Test
-    public void testListUser(){
-        List<User> userList =userMapper.findAll();
-        for (User user : userList) {
-            System.out.println(user);
-        }
-    }
 }

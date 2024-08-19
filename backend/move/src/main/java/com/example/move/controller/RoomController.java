@@ -30,7 +30,7 @@ public class RoomController {
     public Result addRoomByProjectId(@RequestParam int personalId, @RequestBody Equipment equipment) {
 
         int projectId = equipment.getProjectId();
-        int roomId = equipment.getRoomId();
+        String roomId = equipment.getRoomId();
         roomService.addRoom(projectId, roomId, personalId);
         equipmentService.addEquipment(equipment);
         return Result.success("房间新增成功");

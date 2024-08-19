@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
-    @GetMapping("/queryProjectInfo")
+    @GetMapping("/getLoginInfo")
     public Result Login(@RequestParam String code) throws IOException {
         System.out.println(code);
         String url = "https://api.weixin.qq.com/sns/jscode2session?appid=wxa09e12a819f978e4&secret=303cccf759df034fcffe30ff9fb72ab0&js_code="+code+"&grant_type=authorization_code";
