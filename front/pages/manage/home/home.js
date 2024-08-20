@@ -24,12 +24,12 @@ Page({
     swiperList,
     cases:[
       {
-        image:"/image/case1.png",
+        image:"https://img.js.design/assets/img/6669b23ec99f74845a7c30b7.png#6bb70d8520840b4268bf0ed75ee5c273",
         introduce:"天津大学津南校区实验楼大型设备搬迁安装",
         time:"2024-06-12"
       },
       {
-        image:"/image/case2.png",
+        image:"https://img.js.design/assets/img/6669b24bf30216fbd08763ac.png#96cea508dc4100049efedd65876af72f",
         introduce:"天津大学化工学院搬迁",
         time:"2024-05-10"
       }

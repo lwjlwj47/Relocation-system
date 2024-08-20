@@ -1,0 +1,28 @@
+/* pages/manage/add_room/add_room.wxss */
+.top-name
+{
+	text-align:center;
+	background-color: darkseagreen;
+}
+.t-overlay
+{
+	top:0 !important
+}
+.wrapper 
+{
+	padding: 32rpx;
+}
+.upload-name
+{
+	padding-bottom: 16rpx;
+}
+.input-example{
+	padding: 32rpx;
+}
+.button
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+}

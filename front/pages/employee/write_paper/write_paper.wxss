@@ -1,0 +1,11 @@
+/* pages/employee/write_paper/write_paper.wxss */
+.external-class {
+  height: 100vh;
+}
+.button
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+}

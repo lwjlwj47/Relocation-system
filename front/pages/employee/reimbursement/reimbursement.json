@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的报销",
+  "usingComponents": {
+    "t-tabs": "/miniprogram_npm/tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "/miniprogram_npm/tdesign-miniprogram/tab-panel/tab-panel",
+    "t-steps": "/miniprogram_npm/tdesign-miniprogram/steps/steps",
+    "t-step-item": "/miniprogram_npm/tdesign-miniprogram/step-item/step-item"
+  }
+}

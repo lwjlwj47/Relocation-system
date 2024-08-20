@@ -10,7 +10,7 @@ Page({
         name:"中国重汽 SITRAK C5H 340马力",
         start_time:"2024.06.10",
         end_time:"2024.06.16",
-        image:"/image/car.png",
+        image:"https://img.js.design/assets/img/6676f0385e1398b2613d0a74.jpg#c978f030c1acffcdad2fcac973e28def",
         person:"张晓军",
         info:"津A·88888"
 
@@ -72,5 +72,11 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  add_program(){
+    wx.navigateTo({
+      url: '/pages/manage/add_car/add_car',
+    })
+  },
 })

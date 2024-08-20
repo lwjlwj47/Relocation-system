@@ -5,12 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    confirmBtn: { content: '确定', variant: 'base' },
+    showConfirm: false,
+    dialogKey: '',
+    unit:"",
+    unit_number:"",
     value:"",
     program:[
       {
         program_name:"总项目名称",
-        first_name:"甲方负责人名称",
-        second_name:"乙方负责人名称",
+        first_name:"刘三",
+        second_name:"李四",
         start_data:"2024.06.10",
         end_data:"2024.06.16",
         detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
@@ -20,8 +25,8 @@ Page({
     program_done:[
       {
         program_name:"总项目名称",
-        first_name:"甲方负责人名称",
-        second_name:"乙方负责人名称",
+        first_name:"刘三",
+        second_name:"李四",
         start_data:"2024.06.10",
         end_data:"2024.06.16",
         detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
@@ -34,7 +39,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log(options)
+    this.setData({
+      unit:options.name,
+      unit_number:options.number
+    })
   },
 
   /**
@@ -48,7 +57,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+  //   console.log("onshow")
+  //   let pages = getCurrentPages();
+  // let currPage = pages[pages.length-1];
+  // if (currPage.data.back){
+  //   // do something
+  //   let program = [...this.data.program,this.data.program_a]
+  //   this.setData({
+  //     program:program,
+  //     back:false
+  //   })
+  // }
   },
 
   /**
@@ -98,9 +117,34 @@ Page({
       url: '/pages/manage/program_detail_1/program_detail_1',
     })
   },
-  add_program(){
-    wx.navigateTo({
-      url: '/pages/manage/add_program/add_program',
+  onIconTap(e)
+  {
+    let index = e.currentTarget.dataset.index;
+    var array = this.data.program;
+    array.splice(index,1)
+    this.setData({
+      program:array
     })
-  }
+  },
+    //显示框
+    delete(e){
+      const { key } = e.currentTarget.dataset;
+      console.log(e)
+      this.setData({ [key]: true, dialogKey: key });
+      console.log("点击")
+    },
+    closeDialog() {
+      const { dialogKey } = this.data;
+      this.setData({ [dialogKey]: false });
+    },
+    confirmDialog(e){
+      const { dialogKey } = this.data;
+      let index = e.currentTarget.dataset.i;
+      var array = this.data.program;
+      array.splice(index,1)
+      this.setData({
+        program:array,
+        [dialogKey]: false
+      })
+    }
 })

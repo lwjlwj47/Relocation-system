@@ -5,7 +5,7 @@ page{
 }
 .search{
 	padding: 0rpx 24rpx 0rpx 24rpx;
-	background-color: azure;
+	background-color: rgba(255, 255, 255, 1);
 }
 .card{
 	padding: 12rpx 24rpx 0rpx 24rpx;
@@ -15,6 +15,7 @@ page{
 	height: 506rpx;
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 10rpx;
+	margin-bottom: 36rpx;
 }
 .detail-container
 {
@@ -100,13 +101,6 @@ page{
 	color: rgba(0, 186, 74, 1);
 	text-align: left;
 	vertical-align: top;
-}
-.add
-{
-	position: fixed !important;
-	bottom: 0rpx;
-	width: 100%;
-	border-radius: 0% !important;
 }
 .icon 
 {

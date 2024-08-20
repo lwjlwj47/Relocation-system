@@ -1,0 +1,7 @@
+<!--pages/employee/write_paper/write_paper.wxml-->
+<t-textarea t-class="external-class" placeholder="内容" disableDefaultPadding="{{true}}"  bind:change="getvalue" value="{{value}}"/>
+
+<view style="height: 96rpx;"></view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;height:96rpx" bind:tap="write">提交</t-button>
+</view>

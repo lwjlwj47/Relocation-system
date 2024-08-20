@@ -13,13 +13,13 @@ Component({
   },
   methods:{
   navChange(e) {
-    if(this.data.index ==1)
+    if(this.data.index=="1")
     {
     wx.switchTab({
       url:"/pages/firstparty/"+e.currentTarget.dataset.cur+"/"+e.currentTarget.dataset.cur,
     })
     }
-    else if (this.data.index == 2)
+    else if(this.data.index=="2")
     {
       wx.switchTab({
         url: '/pages/manage/'+e.currentTarget.dataset.cur+"/"+e.currentTarget.dataset.cur,

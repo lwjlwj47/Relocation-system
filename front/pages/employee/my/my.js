@@ -5,14 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    top_name_height:"",
+    name_height:"",
     pageCur:"my",
+
+    name:"爱吃西瓜的小丸子",
+    phone:"19973739899"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let menuButton = wx.getMenuButtonBoundingClientRect()
+    let statusBar = wx.getSystemInfoSync();
+    this.setData({
+      name_height: 2 * (menuButton.top - statusBar.statusBarHeight) + menuButton.height,
+      top_name_height:statusBar.statusBarHeight
+    })
   },
 
   /**
@@ -62,5 +72,22 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  gotopaper()
+  {
+    wx.navigateTo({
+      url: '/pages/employee/reimbursement/reimbursement',
+    })
+  },
+  gotodaily()
+  {
+    wx.navigateTo({
+      url: '/pages/employee/daily_paper/daily_paper',
+    })
+  },
+  gotoprogram(){
+    wx.switchTab({
+      url: '/pages/employee/program/program',
+    })
   }
 })

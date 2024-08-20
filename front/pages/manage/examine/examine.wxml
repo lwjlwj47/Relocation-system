@@ -32,6 +32,7 @@
   disabled
 	/>
 </view>
+<view style="height: 96rpx;"></view>
 <view class="button">
 <t-button theme="primary" size="large" style="width: 50%;">通过</t-button>
 <t-button size="large" style="width: 50%;">不通过</t-button>

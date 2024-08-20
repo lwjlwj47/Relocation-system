@@ -1,0 +1,16 @@
+/* pages/manage/step/step.wxss */
+.button
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+}
+.wrapper 
+{
+	padding: 32rpx;
+}
+.upload-name
+{
+	padding-bottom: 16rpx;
+}

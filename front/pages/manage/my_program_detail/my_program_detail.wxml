@@ -8,17 +8,17 @@
 </t-tabs>
 <!-- 未完成的项目 -->
 <view class="card" wx:if="{{value==0}}">
-	<view class="detail" wx:for="{{program}}">
+	<view class="detail" wx:for="{{program}}" wx:key="index">
 	<view class="detail-container">
 	<view class="done">
 		<view class="program-name">
 		{{item.program_name}}
 		</view>
-		<t-icon name="delete" size="24" data-name="{{item}}" bind:click="onIconTap" />
+		<t-icon name="delete" size="24" data-name="{{item}}" bind:tap="delete" data-key="showConfirm" data-index = "{{index}}"/>
 	</view>
 		<view class="person">
-		<view class="theperson">{{item.first_name}}</view>
-		<view class="theperson">{{item.second_name}}</view>
+		<view class="theperson">甲方负责人：{{item.first_name}}</view>
+		<view class="theperson">乙方负责人：{{item.second_name}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
@@ -40,6 +40,15 @@
 		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
 		</view>
 		</view>
+		<t-dialog
+  visible="{{showConfirm}}"
+	data-i="{{index}}"
+  title="确认删除"
+  confirm-btn="{{ confirmBtn }}"
+  cancel-btn="取消"
+  bind:confirm="confirmDialog"
+  bind:cancel="closeDialog"
+/>
 	</view>
 </view>
 <!-- 已完成的项目 -->
@@ -53,8 +62,8 @@
 		<view class="done-word">已完成</view>
 		</view>
 		<view class="person">
-		<view class="theperson">{{item.first_name}}</view>
-		<view class="theperson">{{item.second_name}}</view>
+		<view class="theperson">甲方负责人：{{item.first_name}}</view>
+		<view class="theperson">乙方负责人：{{item.second_name}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
@@ -78,4 +87,3 @@
 		</view>
 	</view>
 </view>
-<t-button theme="primary" size="large" class="add" bind:tap="add_program">添加项目</t-button>

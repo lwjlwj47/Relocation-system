@@ -9,8 +9,8 @@
 		{{item.program_name}}
 		</view>
 		<view class="person">
-		<view class="theperson">{{item.first_name}}</view>
-		<view class="theperson">{{item.second_name}}</view>
+		<view class="theperson">甲方负责人：{{item.first_name}}</view>
+		<view class="theperson">乙方负责人：{{item.second_name}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>

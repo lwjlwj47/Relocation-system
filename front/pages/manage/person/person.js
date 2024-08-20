@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    confirmBtn: { content: '确定', variant: 'base' },
+    showConfirm: false,
+    dialogKey: '',
     person:[
       {
         name:"小刘",
@@ -74,6 +77,26 @@ Page({
   add(){
     wx.navigateTo({
       url: '/pages/manage/add_person/add_person',
+    })
+  },
+  delete(e){
+    const { key } = e.currentTarget.dataset;
+    console.log(e)
+    this.setData({ [key]: true, dialogKey: key });
+    console.log("点击")
+  },
+  closeDialog() {
+    const { dialogKey } = this.data;
+    this.setData({ [dialogKey]: false });
+  },
+  confirmDialog(e){
+    const { dialogKey } = this.data;
+    let index = e.currentTarget.dataset.i;
+    var array = this.data.person;
+    array.splice(index,1)
+    this.setData({
+      person:array,
+      [dialogKey]: false
     })
   }
 })

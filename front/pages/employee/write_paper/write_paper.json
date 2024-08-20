@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "每日日报",
+  "usingComponents": {
+    "t-textarea": "/miniprogram_npm/tdesign-miniprogram/textarea/textarea",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button"
+  }
+}

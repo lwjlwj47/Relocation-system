@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText":"添加房间",
+  "usingComponents": {
+    "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input",
+    "t-picker": "/miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-item": "/miniprogram_npm/tdesign-miniprogram/picker-item/picker-item",
+    "t-cell": "/miniprogram_npm/tdesign-miniprogram/cell/cell",
+    "t-upload": "/miniprogram_npm/tdesign-miniprogram/upload/upload",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button"
+  }
+}

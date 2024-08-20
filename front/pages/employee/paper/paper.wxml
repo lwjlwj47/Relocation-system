@@ -1,0 +1,13 @@
+<!--pages/employee/paper/paper.wxml-->
+<view class="top">
+<view>{{name}}</view>
+<view style="padding-top: 36rpx;">{{time}}</view>
+</view>
+<t-textarea
+  t-class="external-class"
+	value="{{value}}"
+  placeholder="请输入文字"
+  disableDefaultPadding="{{true}}"
+  disabled
+	style="padding: 36rpx;"
+/>

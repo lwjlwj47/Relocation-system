@@ -113,20 +113,51 @@ Page({
   },
   login()
   {
-    wx.login({
-      success: (res) => {
-        console.log(res)
-        wx.request({
-          url: 'http://localhost:8080/login/queryProjectInfo?code='+res.code,
-          method:'GET',
+    // wx.login({
+    //   success: (res) => {
+    //     console.log(res)
+    //     wx.request({
+    //       url: 'http://localhost:8080/login/queryProjectInfo?code='+res.code,
+    //       method:'GET',
+    //       success(res){
+    //         console.log(res.data)
+    //       },
+    //       fail(res){
+    //         console.log(res)
+    //       }
+    //     })
+    //   },
+    // })
+    console.log("在线登录")
+    wx.request({
+      url: 'https://g423745u31.vicp.fun/project/queryProjectInfo',
+      method:'GET',
           success(res){
             console.log(res.data)
           },
           fail(res){
             console.log(res)
           }
-        })
-      },
+    })
+  },
+
+  firstparty()
+  {
+    wx.switchTab({
+      url: '/pages/firstparty/home/home',
+    })
+  },
+
+  manage(){
+    wx.switchTab({
+      url: "/pages/manage/home/home",
+    })
+  },
+
+  employee()
+  {
+    wx.switchTab({
+      url: '/pages/employee/home/home',
     })
   }
 

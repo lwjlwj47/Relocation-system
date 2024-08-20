@@ -1,1 +1,14 @@
 /* pages/manage/add_program/add_program.wxss */
+.t-overlay
+{
+	top:0 !important
+}
+.input-example{
+	padding: 32rpx;
+}
+.button
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

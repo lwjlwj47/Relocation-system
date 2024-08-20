@@ -1,0 +1,57 @@
+<!--pages/employee/reimbursement/reimbursement.wxml-->
+<t-tabs
+  defaultValue="{{0}}"
+  bind:change="onTabsChange"
+  bind:click="onTabsClick"
+  t-class="custom-tabs"
+  t-class-content="custom-panel"
+>
+  <t-tab-panel label="未报销" value="0" style="{{tabPanelstyle}}">
+	<view wx:for="{{paper}}" class="baoxiao">
+	<view class="name">
+	<view>{{item.name}}</view>
+	<view>{{item.money}}元</view>
+	</view>
+	<view>{{item.type}}</view>
+	<view>日期：{{item.data}}</view>
+	
+<view class="step">
+<wxs module="_">
+  module.exports.getText = function(value, curr) { if (value > curr) return '已完成'; if (value == curr)
+  return'当前步骤'; return '未完成'; }
+</wxs>
+
+
+<view class="block">
+  <t-steps current="{{item.rank}}" bind:change="onFirstChange" >
+    <t-step-item wx:for="{{my_steps}}" wx:key="index" title="{{my_steps[index]}}" bind:tap="selectstep" data-key="{{index}}" data-i="{{i}}"/>
+  </t-steps>
+</view>
+</view>
+	</view>
+	</t-tab-panel>
+  <t-tab-panel label="已报销" value="1" style="{{tabPanelstyle}}">
+		<view wx:for="{{paper_done}}" class="baoxiao">
+	<view class="name">
+	<view>{{item.name}}</view>
+	<view>{{item.money}}元</view>
+	</view>
+	<view>{{item.type}}</view>
+	<view>日期：{{item.data}}</view>
+	
+<view class="step">
+<wxs module="_">
+  module.exports.getText = function(value, curr) { if (value > curr) return '已完成'; if (value == curr)
+  return'当前步骤'; return '未完成'; }
+</wxs>
+
+
+<view class="block">
+  <t-steps current="{{item.rank}}" bind:change="onFirstChange" >
+    <t-step-item wx:for="{{my_steps}}" wx:key="index" title="{{my_steps[index]}}" bind:tap="selectstep" data-key="{{index}}" data-i="{{i}}"/>
+  </t-steps>
+</view>
+</view>
+	</view>
+	</t-tab-panel>
+</t-tabs>

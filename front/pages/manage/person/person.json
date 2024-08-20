@@ -4,6 +4,7 @@
     "t-image": "/miniprogram_npm/tdesign-miniprogram/image/image",
     "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
     "t-search": "/miniprogram_npm/tdesign-miniprogram/search/search",
-    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon"
+    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon",
+    "t-dialog": "/miniprogram_npm/tdesign-miniprogram/dialog/dialog"
   }
 }

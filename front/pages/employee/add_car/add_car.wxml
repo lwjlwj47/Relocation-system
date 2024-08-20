@@ -1,0 +1,15 @@
+<!--pages/manage/add_car/add_car.wxml-->
+<view class="example-search">
+  <t-search placeholder="请输入车辆信息" shape="round" />
+</view>
+<view class="container">
+	<view wx:for="{{cars}}" class='car' bind:tap="select_car" data-key="{{index}}">
+	<view class="car-name">
+		<t-image src="{{item.image}}" style="width:160rpx;height:160rpx" ></t-image>
+		<view style="margin-left: 24rpx;">
+		<view class="car-name-1">{{item.name}}</view>
+		<view class="car-time">车辆信息:{{item.info}}</view>
+		</view>
+	</view>
+	</view>
+</view>

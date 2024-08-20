@@ -1,0 +1,25 @@
+<!--pages/manage/step/step.wxml-->
+<view class="wrapper">
+<view class="upload-name"> 上传图片 </view>
+<t-upload
+    mediaType="{{['video','image']}}"
+		data-key="{{i}}"
+    files="{{fileList}}"
+    bind:add="handleAdd"
+    bind:remove="handleRemove"
+  >
+  </t-upload>
+</view>
+<view class="input-example">
+  <view class="input-example__label">备注</view>
+  <t-input
+    placeholder="请输入文字"
+    borderless="{{true}}"
+    style="{{style}}"
+		data-key="{{i}}"
+		bind:change="putchange"
+  />
+</view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;height:96rpx" bind:tap="add">提交</t-button>
+</view>

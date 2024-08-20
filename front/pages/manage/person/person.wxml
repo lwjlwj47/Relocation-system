@@ -9,7 +9,7 @@
 		<view class="info-container">
 		<view class="name">
 		<view class="equipment-name-1">姓名：{{item.name}}</view>
-		<t-icon name="delete" size="24" data-name="{{item}}" bind:click="onIconTap" />
+		<t-icon name="delete" size="24" data-name="{{item}}" bind:click="onIconTap"  bind:tap="delete"   data-key="showConfirm" data-i="{{index}}"/>
 		</view>
 		<view class="person">
 			<view class="person-1">性别:{{item.sex}}</view>
@@ -19,5 +19,15 @@
 		</view>
 		</view>
 	</view>
+	<t-dialog
+  visible="{{showConfirm}}"
+	data-i="{{index}}"
+  title="确认删除"
+  confirm-btn="{{ confirmBtn }}"
+  cancel-btn="取消"
+  bind:confirm="confirmDialog"
+  bind:cancel="closeDialog"
+/>
 	</view>
+	<view style="height: 96rpx;"></view>
 	<t-button theme="primary" size="large" class="button" bind:tap="add">添加人员</t-button>

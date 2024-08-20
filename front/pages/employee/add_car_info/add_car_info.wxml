@@ -1,0 +1,82 @@
+<!--pages/manage/add_car_info/add_car_info.wxml-->
+<t-input label="项目名称" placeholder="{{name}}"  bind:change="name1change" align="right" />
+<t-cell class="mb-16" title="设备负责人" arrow hover note="{{personText}}" bind:click="onPersonPicker" />
+<t-picker
+  visible="{{personVisible}}"
+  value="{{personValue}}"
+  data-key="person"
+  title="设备负责人"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{person}}" />
+</t-picker>
+
+<t-cell
+  title="项目开始日期"
+  hover
+  note="{{date1Text || ''}}"
+  arrow
+  data-mode="date1"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+
+<!-- 年月日 -->
+<t-date-time-picker
+  title="选择日期"
+  visible="{{date1Visible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+
+<!-- 时间2 -->
+<t-cell
+  title="项目结束日期"
+  hover
+  note="{{date2Text || ''}}"
+  arrow
+  data-mode="date2"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+
+<!-- 年月日 -->
+<t-date-time-picker
+  title="选择日期"
+  visible="{{date2Visible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+<view wx:for="{{cars}}" class='car' bind:tap="select_car" data-key="{{index}}">
+	<view class="car-name">
+		<t-image src="{{item.image}}" style="width:160rpx;height:160rpx" ></t-image>
+		<view style="margin-left: 24rpx;">
+		<view class="car-name-1">{{item.name}}</view>
+		<view class="car-time">车辆信息:{{item.info}}</view>
+		</view>
+	</view>
+	</view>
+
+<view style="height: 96rpx;"></view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;" bind:tap="return">提交</t-button>
+</view>

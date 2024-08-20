@@ -1,3 +1,99 @@
 <!--pages/manage/add_program/add_program.wxml-->
-<t-input label="事企业" placeholder="请输入项目名称" align="right" />
-<t-input label="项目名称" placeholder="请输入项目名称" align="right" />
+<t-cell class="mb-16" title="选择企业类型" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
+<t-input label="单位名称" placeholder="请输入单位名称"  bind:change="name1change" align="right" />
+<t-input label="项目名称" placeholder="请输入项目名称"  bind:change="name2change" align="right" />
+<t-input label="甲方负责人" placeholder="请输入甲方负责人名称"  bind:change="name3change" align="right" />
+<t-picker
+  visible="{{cityVisible}}"
+  value="{{cityValue}}"
+  data-key="city"
+  title="选择企业类型"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{citys}}" />
+</t-picker>
+<t-cell class="mb-16" title="乙方负责人" arrow hover note="{{personText}}" bind:click="onPersonPicker" />
+<t-picker
+  visible="{{personVisible}}"
+  value="{{personValue}}"
+  data-key="person"
+  title="乙方负责人"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{person}}" />
+</t-picker>
+
+<t-cell
+  title="项目开始日期"
+  hover
+  note="{{date1Text || ''}}"
+  arrow
+  data-mode="date1"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+
+<!-- 年月日 -->
+<t-date-time-picker
+  title="选择日期"
+  visible="{{date1Visible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+
+<!-- 时间2 -->
+<t-cell
+  title="项目结束日期"
+  hover
+  note="{{date2Text || ''}}"
+  arrow
+  data-mode="date2"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+
+<!-- 年月日 -->
+<t-date-time-picker
+  title="选择日期"
+  visible="{{date2Visible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+
+<view class="input-example">
+  <view class="input-example__label">备注</view>
+  <t-input
+    placeholder="请输入文字"
+    borderless="{{true}}"
+    style="{{style}}"
+		bind:change="remarkchange"
+  />
+</view>
+<view style="height: 96rpx;"></view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;" bind:tap="return">提交</t-button>
+</view>

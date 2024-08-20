@@ -5,6 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name:"",
+    sex:"",
+    ID_card:"",
+    phone:"",
+    weixin:"",
     cityText: '',
     cityValue: [],
     citys: [
@@ -102,5 +107,40 @@ Page({
 
   onSeasonPicker() {
     this.setData({ dateVisible: true });
+  },
+
+  namechange(e)
+  {
+    this.setData({
+      name:e.detail.value
+    })
+  },
+
+  sexchange(e)
+  {
+    this.setData({
+      sex:e.detail.value
+    })
+  },
+
+  phonechange(e)
+  {
+    this.setData({
+      phone:e.detail.value
+    })
+  },
+
+  IDchange(e)
+  {
+    this.setData({
+      ID_card:e.detail.value
+    })
+  },
+
+  weixinchange(e)
+  {
+    this.setData({
+      weixin:e.detail.value
+    })
   },
 })

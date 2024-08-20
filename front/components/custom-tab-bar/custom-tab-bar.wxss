@@ -4,6 +4,8 @@
   min-height: 100rpx;
   justify-content: space-between;
   align-items: center;
+  /* background-color: cadetblue; */
+	background: rgba(245, 245, 245, 1);
 }
  
 .fu-bar.shadow {
@@ -23,6 +25,7 @@
   max-width: 100%;
   height: 100rpx;
   flex: 1;
+  padding-top: 10rpx;
 }
  
 .fu-bar .cell .image {

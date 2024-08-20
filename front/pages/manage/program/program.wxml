@@ -1,15 +1,15 @@
 <!--pages/manage/program/program.wxml-->
 <!--pages/firstparty/program/program.wxml-->
 <view class="search">
-  <t-search placeholder="请输入企事业单位名称"  shape="round"/>
+  <t-search placeholder="请输入高校/企事业单位名称"  shape="round"/>
 </view>
 <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
   <t-tab-panel label="高校" value="0" />
-  <t-tab-panel label="企事业单位" value="1" />
+  <t-tab-panel label="企事业" value="1" />
 </t-tabs>
 <!-- 高校 -->
 <view class='card' wx:if="{{value==0}}">
-	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail">
+	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail" data-key ="{{item.name}}" data-number="1">
 		<view class="image-1">
 			<t-image src="{{item.image}}" class="image"></t-image>
 		</view>
@@ -25,7 +25,7 @@
 </view>
 <!-- 企事业单位 -->
 <view class='card' wx:if="{{value==1}}">
-	<view wx:for="{{unit_conpany}}" class="the-card" bind:tap="gotodetail">
+	<view wx:for="{{unit_conpany}}" class="the-card" bind:tap="gotodetail" data-key ="{{item.name}}" data-number="0">
 		<view class="image-1">
 			<t-image src="{{item.image}}" class="image"></t-image>
 		</view>
@@ -39,4 +39,5 @@
 			</view>
 	</view>
 </view>
+<view style="height: 110rpx;"></view>
 <custom-tab-bar pageCur="{{pageCur}}"  index="2"></custom-tab-bar>

@@ -96,5 +96,10 @@ Page({
     wx.navigateTo({
       url: '/pages/manage/apply/apply',
     })
+  },
+  tiaozhuan(){
+    wx.switchTab({
+      url: '/pages/firstparty/home/home',
+    })
   }
 })

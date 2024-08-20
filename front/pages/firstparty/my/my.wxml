@@ -13,12 +13,12 @@
 <t-cell-group theme="card" class="card">
   <t-cell title="我的项目管理"  hover arrow >
 		<view slot="left-icon">
-			<t-image src="/image/cell1.png" width="24" height="24"></t-image>
+			<t-image src="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.htmlcell1.png" width="24" height="24"></t-image>
 		</view>
 		</t-cell>
 	<t-cell title="我的消息" bind:tap="gotomessage" hover arrow >
 	<view slot="left-icon">
-			<t-image src="/image/cell2.png" width="24" height="24"></t-image>
+			<t-image src="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.htmlcell2.png" width="24" height="24"></t-image>
 		</view>
 	</t-cell>
 </t-cell-group>

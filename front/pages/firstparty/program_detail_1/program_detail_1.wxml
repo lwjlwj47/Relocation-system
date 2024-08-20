@@ -6,8 +6,8 @@
 		{{program.program_name}}
 		</view>
 		<view class="person">
-		<view class="theperson">{{program.first_name}}</view>
-		<view class="theperson">{{program.second_name}}</view>
+		<view class="theperson">甲方负责人：{{program.first_name}}</view>
+		<view class="theperson">乙方负责人：{{program.second_name}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
@@ -67,7 +67,7 @@
 	<view class="other">
 <view class='box' style="background-color: rgba(255, 187, 1, 1);" bind:tap="gotocar">
 <view class="introduce-image" >
-  <image src="/image/truck-2.png" class="introduce-image-1"></image>
+  <image src="https://imgur.la/images/2024/08/15/truck-2.png" class="introduce-image-1"></image>
 </view>
 	<view class="my">
 	<view  class ="name" >运输信息</view>
@@ -79,7 +79,7 @@
 </view>
 <view class='box' style="background-color: rgba(0, 133, 254, 1);" bind:tap="gotoequipment">
 <view class="introduce-image">
-  <image src="/image/phone.png" class="introduce-image-1"></image>
+  <image src="https://imgur.la/images/2024/08/15/phone.png" class="introduce-image-1"></image>
 </view>
 	<view class="my">
 	<view  class ="name" >设备信息</view>

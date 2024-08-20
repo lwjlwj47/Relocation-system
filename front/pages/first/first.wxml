@@ -3,25 +3,19 @@
 
 
 
-<!-- <view class="navigation" style="background-color: {{navigationBackgroundColor}}; height: {{paddingTopNum}}px; padding-top: {{statusBarHeight}}px;">
-	<!-- 左边的返回按钮图标 -->
-	<!-- <view class='navigation_bar_left' bindtap="back">
-		<view class="iconfont icon-fanhuijian"></view>
-	</view>
-	<view class='navigation_bar_center'>
-		<view>{{navigationBarTitleText}}</view>
-	</view>
-</view>  -->
+
 <view class = "top-back">
 <view style="height: {{top_name_height}}px;"></view>
 <view class = "top-name" style="height: {{name_height}}px;">登录主页</view>
 <view class="login">
-	<image class ="avatar"src="/image/avatar.png"></image>
+	<image class ="avatar"src="https://imgur.la/images/2024/08/15/avatar.png"></image>
 	<view  class ="loginin" bind:tap="login">点击登录</view>
 </view>
 </view>
 
-<button bindtap="go">点击跳转</button>
 
 <button bind:tap="login">登录</button>
+<button bind:tap="firstparty">进入甲方端</button>
+<button bind:tap="manage">进入管理员端</button>
+<button bind:tap="employee">进入员工端</button>
 

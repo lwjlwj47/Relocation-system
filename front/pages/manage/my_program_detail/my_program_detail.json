@@ -7,6 +7,7 @@
     "t-tab-panel": "/miniprogram_npm/tdesign-miniprogram/tab-panel/tab-panel",
     "t-textarea": "/miniprogram_npm/tdesign-miniprogram/textarea/textarea",
     "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
-    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon"
+    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon",
+    "t-dialog": "/miniprogram_npm/tdesign-miniprogram/dialog/dialog"
     }
 }

@@ -1,0 +1,25 @@
+/* pages/employee/daily_paper/daily_paper.wxss */
+page{
+	background-color:rgba(187, 194, 193, 0.493);
+}
+.button
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+}
+.card
+{
+	border-radius: 10rpx;
+	background-color: rgba(255, 255, 255, 1);
+	margin: 12rpx 24rpx 12rpx 24rpx;
+	width: 702rpx;
+}
+.item{
+	padding: 20rpx;
+}
+.content{
+	padding-top: 20rpx;
+	padding-left: 20rpx;
+}

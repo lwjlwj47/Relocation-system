@@ -1,6 +1,6 @@
 /* pages/firstparty/my/my.wxss */
 page{
-	color: rgba(245, 245, 245, 1);
+	background-color:rgba(187, 194, 193, 0.493);
 }
 .top-back{
 	left: 0px;

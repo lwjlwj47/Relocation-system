@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"房间详情",
+  "navigationBarTitleText":"设备详情",
   "styleIsolation": "apply-shared",
   "usingComponents": {
     "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",

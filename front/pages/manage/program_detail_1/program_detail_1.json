@@ -8,6 +8,7 @@
     "t-link": "/miniprogram_npm/tdesign-miniprogram/link/link",
     "t-divider": "/miniprogram_npm/tdesign-miniprogram/divider/divider",
     "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
-    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon"
+    "t-icon": "/miniprogram_npm/tdesign-miniprogram/icon/icon",
+    "t-dialog": "/miniprogram_npm/tdesign-miniprogram/dialog/dialog"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "日报",
+  "usingComponents": {
+    "t-cell": "/miniprogram_npm/tdesign-miniprogram/cell/cell",
+    "t-calendar": "/miniprogram_npm/tdesign-miniprogram/calendar/calendar",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button",
+    "t-link": "/miniprogram_npm/tdesign-miniprogram/link/link"
+  }
+}

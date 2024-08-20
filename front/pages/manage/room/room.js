@@ -12,9 +12,9 @@ Page({
       {
         name:"设备名称",
         rank:"一等级",
-        image:"/image/equipment-1.png",
+        image:"https://img.js.design/assets/img/6676f87c22652736f73972fd.jpg#76dbe6fac70afaae2ffa764aab0378d5",
         remark:"轻拿轻放",
-        step:6,
+        step:4,
       }
     ],
     my_steps:steps,
@@ -41,8 +41,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
-  },
+    console.log("onshow")
+    let pages = getCurrentPages();
+  let currPage = pages[pages.length-1];
+  if (currPage.data.back){
+    // do something
+    var step = "equipment[" + this.data.i + "].step";
+    this.setData({
+      [step]:this.data.index,
+    })
+  }
+},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -77,5 +86,14 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  selectstep(res)
+  {
+    console.log(res.currentTarget.dataset.key)
+    let key = res.currentTarget.dataset.key+1
+    console.log(res)
+    wx.navigateTo({
+      url: '/pages/manage/step/step?index='+key+"&i="+res.currentTarget.dataset.i,
+    })
   }
 })

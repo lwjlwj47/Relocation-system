@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"工序",
+  "usingComponents": {
+    "t-input": "/miniprogram_npm/tdesign-miniprogram/input/input",
+    "t-upload": "/miniprogram_npm/tdesign-miniprogram/upload/upload",
+    "t-button": "/miniprogram_npm/tdesign-miniprogram/button/button"
+  }
+}

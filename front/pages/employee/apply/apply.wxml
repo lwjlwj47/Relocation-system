@@ -63,6 +63,7 @@
     style="{{style}}"
   />
 </view>
+<view style="height: 96rpx;"></view>
 <view class="button">
 <t-button theme="primary" size="large" style="width: 100%;">提交</t-button>
 </view>

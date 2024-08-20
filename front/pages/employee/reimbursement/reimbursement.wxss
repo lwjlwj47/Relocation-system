@@ -1,0 +1,19 @@
+/* pages/employee/reimbursement/reimbursement.wxss */
+page{
+	background-color:rgba(187, 194, 193, 0.493);
+}
+.baoxiao{
+	/* background-color: rgba(255, 255, 255, 1); */
+	background-color: aquamarine;
+	margin: 32rpx 32rpx 0 32rpx;
+	padding: 32rpx;
+}
+.name{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.step
+{
+	margin-top: 32rpx;
+}

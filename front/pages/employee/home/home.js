@@ -70,5 +70,21 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  program(){
+    wx.switchTab({
+        url:"/pages/employee/program/program"
+    })
+  },
+  apply(){
+    wx.navigateTo({
+      url: '/pages/employee/apply/apply',
+    })
+  },
+  daily(){
+    wx.navigateTo({
+      url: '/pages/employee/daily_paper/daily_paper',
+    })
   }
 })

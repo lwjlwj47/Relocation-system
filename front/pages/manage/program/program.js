@@ -9,29 +9,29 @@ Page({
     value:"0",
     unit_school:[
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"中国民航大学",
         number:10
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津大学",
         number:20
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津医科大学",
         number:50
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"南开大学",
         number:120
       }
     ],
     unit_conpany:[
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津共享信息咨询有限公司",
         number:24
       }
@@ -114,10 +114,13 @@ Page({
     })
     console.log(this.data.value)
   },
-  gotodetail()
+
+  gotodetail(e)
   {
+    let name = e.currentTarget.dataset.key
+    let number = e.currentTarget.dataset.number
     wx.navigateTo({
-      url: '/pages/manage/program_detail/program_detail',
+      url: '/pages/manage/program_detail/program_detail?name='+name+'&number='+number,
     })
   }
 })

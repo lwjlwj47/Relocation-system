@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"选择您的企事业单位",
+  "navigationBarTitleText":"项目管理",
   "usingComponents": {
     "custom-tab-bar": "/components/custom-tab-bar/custom-tab-bar",
     "t-search": "/miniprogram_npm/tdesign-miniprogram/search/search",

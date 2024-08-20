@@ -1,0 +1,68 @@
+<!--pages/manage/add_room/add_room.wxml-->
+<t-input label="房间名称" placeholder="请输入房间名称"  bind:change="roomchange"  align="right" />
+<t-cell class="mb-16" title="选择房间负责人" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
+<t-picker
+  visible="{{cityVisible}}"
+  value="{{cityValue}}"
+  data-key="city"
+  title="选择房间负责人"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{citys}}" />
+</t-picker>
+
+<view wx:for="{{equipment}}" wx:for-index="i">
+<view class="top-name">设备{{i+1}}</view>
+<t-input label="设备名称" placeholder="请输入设备名称"  bind:change="namechange" data-key="{{i}}" align="right" />
+<t-cell class="mb-16" title="选择设备等级" arrow hover note="{{item.rank}}" bind:click="onRankPicker" />
+<t-picker
+  visible="{{rankVisible}}"
+  value="{{rankValue}}"
+	data-key="{{i}}"
+  title="选择设备等级"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  usingCustomNavbar
+  bindchange="onPickerChange"
+  bindpick="onColumnChange"
+  bindcancel="onPickerCancel"
+>
+  <t-picker-item options="{{ranks}}" />
+</t-picker>
+
+<view class="wrapper">
+<view class="upload-name"> 上传图片 </view>
+<t-upload
+    mediaType="{{['video','image']}}"
+		data-key="{{i}}"
+    files="{{fileList}}"
+    bind:add="handleAdd"
+    bind:remove="handleRemove"
+  >
+  </t-upload>
+</view>
+<view class="input-example">
+  <view class="input-example__label">备注</view>
+  <t-input
+    placeholder="请输入文字"
+    borderless="{{true}}"
+    style="{{style}}"
+		data-key="{{i}}"
+		bind:change="putchange"
+  />
+</view>
+
+
+</view>
+<view style="text-align: center;">
+<t-button  size="large" style="width: 30%;" bind:tap="add_eq">添加设备</t-button>
+</view>
+<view style="height:96rpx"></view>
+<view class="button">
+<t-button theme="primary" size="large" style="width: 100%;height:96rpx" bind:tap="add">提交</t-button>
+</view>

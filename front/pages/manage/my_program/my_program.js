@@ -5,33 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showConfirm: false,
+    dialogKey: '',
     pageCur:"program",
     value:"0",
     unit_school:[
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"中国民航大学",
         number:10
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津大学",
         number:20
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津医科大学",
         number:50
       },
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"南开大学",
         number:120
       }
     ],
     unit_conpany:[
       {
-        image:"/image/unit.png",
+        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
         name:"天津共享信息咨询有限公司",
         number:24
       }
@@ -42,7 +44,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log("onload")
+    console.log(options)
   },
 
   /**
@@ -56,7 +59,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
   },
 
   /**
@@ -114,10 +116,18 @@ Page({
     })
     console.log(this.data.value)
   },
-  gotodetail()
+  gotodetail(e)
   {
+    console.log(e)
+    let name = e.currentTarget.dataset.key
+    let number = e.currentTarget.dataset.number
     wx.navigateTo({
-      url: '/pages/manage/my_program_detail/my_program_detail',
+      url: '/pages/manage/my_program_detail/my_program_detail?name='+name+'&number='+number,
     })
-  }
+  },
+  add_program(){
+    wx.navigateTo({
+      url: '/pages/manage/add_program/add_program',
+    })
+  },
 })

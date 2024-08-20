@@ -12,7 +12,7 @@ Page({
       {
         name:"设备名称",
         rank:"一等级",
-        image:"/image/equipment-1.png",
+        image:"https://img.js.design/assets/img/6676f87c22652736f73972fd.jpg#76dbe6fac70afaae2ffa764aab0378d5",
         remark:"轻拿轻放",
         step:6,
       }

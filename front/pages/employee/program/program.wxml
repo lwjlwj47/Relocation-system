@@ -1,10 +1,10 @@
 <!--pages/employee/program/program.wxml-->
 <view class="search">
-  <t-search placeholder="请输入企事业单位名称"  shape="round"/>
+  <t-search placeholder="请输入高校/企事业单位名称"  shape="round"/>
 </view>
 <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
   <t-tab-panel label="高校" value="0" />
-  <t-tab-panel label="企事业单位" value="1" />
+  <t-tab-panel label="企事业" value="1" />
 </t-tabs>
 <!-- 高校 -->
 <view class='card' wx:if="{{value==0}}">
@@ -40,5 +40,5 @@
 </view>
 
 
-
+<view style="height: 110rpx;"></view>
 <custom-tab-bar pageCur="{{pageCur}}" index="3"></custom-tab-bar>

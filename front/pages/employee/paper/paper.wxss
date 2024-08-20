@@ -1,0 +1,4 @@
+/* pages/employee/paper/paper.wxss */
+.top{
+	margin: 56rpx;
+}
