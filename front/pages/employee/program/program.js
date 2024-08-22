@@ -114,10 +114,11 @@ Page({
     })
     console.log(this.data.value)
   },
-  gotodetail()
+  gotodetail(e)
   {
+    let name = e.currentTarget.dataset.key
     wx.navigateTo({
-      url: '/pages/employee/program_detail/program_detail',
+      url: '/pages/employee/program_detail/program_detail?name='+name,
     })
   }
 })

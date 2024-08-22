@@ -8,7 +8,7 @@
 </t-tabs>
 <!-- 高校 -->
 <view class='card' wx:if="{{value==0}}">
-	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail">
+	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail" data-key ="{{item.name}}">
 		<view class="image-1">
 			<t-image src="{{item.image}}" class="image"></t-image>
 		</view>
@@ -24,7 +24,7 @@
 </view>
 <!-- 企事业单位 -->
 <view class='card' wx:if="{{value==1}}">
-	<view wx:for="{{unit_conpany}}" class="the-card" bind:tap="gotodetail">
+	<view wx:for="{{unit_conpany}}" class="the-card" bind:tap="gotodetail" data-key ="{{item.name}}">
 		<view class="image-1">
 			<t-image src="{{item.image}}" class="image"></t-image>
 		</view>

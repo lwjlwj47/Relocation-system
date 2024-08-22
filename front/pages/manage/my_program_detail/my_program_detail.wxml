@@ -8,27 +8,27 @@
 </t-tabs>
 <!-- 未完成的项目 -->
 <view class="card" wx:if="{{value==0}}">
-	<view class="detail" wx:for="{{program}}" wx:key="index">
+	<view class="detail" wx:for="{{program}}" wx:key="index" wx:if="{{item.projectIsDone==0}}">
 	<view class="detail-container">
 	<view class="done">
 		<view class="program-name">
-		{{item.program_name}}
+			{{item.projectName}}
 		</view>
 		<t-icon name="delete" size="24" data-name="{{item}}" bind:tap="delete" data-key="showConfirm" data-index = "{{index}}"/>
 	</view>
 		<view class="person">
-		<view class="theperson">甲方负责人：{{item.first_name}}</view>
-		<view class="theperson">乙方负责人：{{item.second_name}}</view>
+			<view class="theperson">甲方负责人：{{item.projectFirstPerson}}</view>
+		<view class="theperson">乙方负责人：{{item.projectSecondPerson}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
-		<view>{{item.start_data}}-{{item.end_data}}</view>
+		<view>{{item.projectStartTime}}至{{item.projectEndTime}}</view>
 		</view>
 		<view>
 		<view class="detail-name">项目详情</view>
 		<t-textarea
   t-class="external-class"
-  value="{{item.detail}}"
+  value="{{item.projectRemark}}"
 	maxcharacter="200"
   disableDefaultPadding="{{true}}"
 	style="height: 120rpx; padding: 16rpx;"
@@ -37,7 +37,7 @@
 	/>
 		</view>
 		<view class="button">
-		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
+		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto" data-id="{{item.projectId}}">查看项目详情</t-button>
 		</view>
 		</view>
 		<t-dialog
@@ -53,27 +53,27 @@
 </view>
 <!-- 已完成的项目 -->
 <view class="card" wx:if="{{value==1}}">
-	<view class="detail" wx:for="{{program_done}}">
+	<view class="detail" wx:for="{{program}}" wx:if="{{item.projectIsDone==1}}">
 	<view class="detail-container">
 		<view class="done">
 		<view class="program-name">
-		{{item.program_name}}
+			{{item.projectName}}
 		</view>
 		<view class="done-word">已完成</view>
 		</view>
 		<view class="person">
-		<view class="theperson">甲方负责人：{{item.first_name}}</view>
-		<view class="theperson">乙方负责人：{{item.second_name}}</view>
+			<view class="theperson">甲方负责人：{{item.projectFirstPerson}}</view>
+		<view class="theperson">乙方负责人：{{item.projectSecondPerson}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
-		<view>{{item.start_data}}-{{item.end_data}}</view>
+		<view>{{item.projectStartTime}}至{{item.projectEndTime}}</view>
 		</view>
 		<view>
 		<view class="detail-name">项目详情</view>
 		<t-textarea
   t-class="external-class"
-  value="{{item.detail}}"
+  value="{{item.projectRemark}}"
 	maxcharacter="200"
   disableDefaultPadding="{{true}}"
 	style="height: 120rpx; padding: 16rpx;"
@@ -82,8 +82,9 @@
 	/>
 		</view>
 		<view class="button">
-		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto">查看项目详情</t-button>
+		<t-button variant="outline"  theme="primary" shape="round" class="button" bind:tap="goto" data-id="{{item.projectId}}">查看项目详情</t-button>
 		</view>
 		</view>
 	</view>
+
 </view>

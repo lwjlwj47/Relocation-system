@@ -1,4 +1,7 @@
 // pages/firstparty/program_detail_1/program_detail_1.js
+const app = getApp();
+const api = app.globalData.api;
+
 Page({
 
   /**
@@ -10,29 +13,6 @@ Page({
     autosize:20,
     room_6:[],
     current_room:[],
-    room:[
-      {
-        number:"001",
-      },
-      {
-        number:"001",
-      },      
-      {
-        number:"001",
-      },
-      {
-        number:"001",
-      },
-      {
-        number:"001",
-      },
-      {
-        number:"001",
-      },      
-      {
-        number:"001",
-      },
-    ],
     program:
       {
         program_name:"总项目名称",
@@ -49,11 +29,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let firstSix = this.data.room.slice(0, 6);
-    this.setData({
-      room_6:firstSix,
-      current_room:firstSix
+    const id = options.id
+    let that = this
+    //查询项目详情
+    wx.request({
+      url: api+'/project/queryProjectById?projectId='+id, 
+      method:"GET",
+      success(res){
+        that.setData({
+          program:res.data.data[0]
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
     })
+    //查询房间详情
+    wx.request({
+      url: api+'/room/queryRoomByProjectId?projectId='+id, 
+      method:"GET",
+      success(res){
+        console.log(res)
+        let firstSix = res.data.data.slice(0, 6);
+        that.setData({
+          room:res.data.data,
+          room_6:firstSix,
+          current_room:firstSix
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
+    })
+
+
   },
 
   /**
@@ -127,15 +138,17 @@ Page({
       current_room:this.data.room_6
     })
   },
-  gotoroom()
+  gotoroom(e)
   {
+    let id = e.currentTarget.dataset.id
+    let roomid = e.currentTarget.dataset.roomId
     wx.navigateTo({
-      url: '/pages/firstparty/room/room',
+      url: '/pages/firstparty/room/room?roomId='+roomid+"&projectid="+this.data.program.projectId+"&id="+id,
     })
   },
   gotocar(){
     wx.navigateTo({
-      url: '/pages/firstparty/car/car',
+      url: '/pages/firstparty/car/car?projectid='+this.data.program.projectId,
     })
   },
   gotoequipment(){

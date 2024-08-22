@@ -1,4 +1,7 @@
 // pages/firstparty/program_detail_1/program_detail_1.js
+const app = getApp();
+const api = app.globalData.api;
+
 Page({
 
   /**
@@ -14,49 +17,78 @@ Page({
     autosize:20,
     room_6:[],
     current_room:[],
-    room:[
-      {
-        number:"001",
-      },
-      {
-        number:"002",
-      },      
-      {
-        number:"003",
-      },
-      {
-        number:"004",
-      },
-      {
-        number:"005",
-      },
-      {
-        number:"006",
-      },      
-      {
-        number:"007",
-      },
-    ],
-    program:
-      {
-        program_name:"总项目名称",
-        first_name:"刘三",
-        second_name:"李四",
-        start_data:"2024.06.10",
-        end_data:"2024.06.16",
-        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情...这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情...这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情"
+    // room:[
+    //   {
+    //     number:"001",
+    //   },
+    //   {
+    //     number:"002",
+    //   },      
+    //   {
+    //     number:"003",
+    //   },
+    //   {
+    //     number:"004",
+    //   },
+    //   {
+    //     number:"005",
+    //   },
+    //   {
+    //     number:"006",
+    //   },      
+    //   {
+    //     number:"007",
+    //   },
+    // ],
+    // program:
+    //   {
+    //     program_name:"总项目名称",
+    //     first_name:"刘三",
+    //     second_name:"李四",
+    //     start_data:"2024.06.10",
+    //     end_data:"2024.06.16",
+    //     detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情...这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情...这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情"
 
-      },
+    //   },
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let firstSix = this.data.room.slice(0, 6);
-    this.setData({
-      room_6:firstSix,
-      current_room:firstSix
+    const id = options.id
+    let that = this
+    //查询项目详情
+    wx.request({
+      url: api+'/project/queryProjectById?projectId='+id, 
+      method:"GET",
+      success(res){
+        that.setData({
+          program:res.data.data[0]
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
+    })
+    //查询房间详情
+    wx.request({
+      url: api+'/room/queryRoomByProjectId?projectId='+id, 
+      method:"GET",
+      success(res){
+        console.log(res)
+        let firstSix = res.data.data.slice(0, 6);
+        that.setData({
+          room:res.data.data,
+          room_6:firstSix,
+          current_room:firstSix
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
     })
   },
 
@@ -152,7 +184,7 @@ Page({
   },
   gotocar(){
     wx.navigateTo({
-      url: '/pages/manage/car/car',
+      url: '/pages/manage/car/car?projectid='+this.data.program.projectId,
     })
   },
   gotoequipment(){
@@ -163,7 +195,7 @@ Page({
   add_room()
   {
     wx.navigateTo({
-      url: '/pages/manage/add_room/add_room',
+      url: '/pages/manage/add_room/add_room?'
     })
   },
       //显示框

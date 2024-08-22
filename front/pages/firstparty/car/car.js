@@ -1,28 +1,48 @@
 // pages/firstparty/car/car.js
+const app = getApp();
+
+const api = app.globalData.api;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cars:[
-      {
-        name:"中国重汽 SITRAK C5H 340马力",
-        start_time:"2024.06.10",
-        end_time:"2024.06.16",
-        image:"https://img.js.design/assets/img/6676f0385e1398b2613d0a74.jpg#c978f030c1acffcdad2fcac973e28def",
-        person:"张晓军",
-        info:"津A·88888"
+    // cars:[
+    //   {
+    //     name:"中国重汽 SITRAK C5H 340马力",
+    //     start_time:"2024.06.10",
+    //     end_time:"2024.06.16",
+    //     image:"https://img.js.design/assets/img/6676f0385e1398b2613d0a74.jpg#c978f030c1acffcdad2fcac973e28def",
+    //     person:"张晓军",
+    //     info:"津A·88888"
 
-      }
-    ]
+    //   }
+    // ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let that = this
+    console.log(options)
+        //查询房间详情
+        wx.request({
+          url: api+'/car/queryCarByProId?proId='+options.projectid, 
+          method:"GET",
+          success(res){
+            console.log(res)
+            that.setData({
+              cars:res.data.data,
+            })
+          },
+          fail(res)
+          {
+            console.log(res)
+          }
+        })
   },
 
   /**

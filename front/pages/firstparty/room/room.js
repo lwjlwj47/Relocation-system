@@ -1,4 +1,6 @@
 // pages/firstparty/room/room.js
+const app = getApp();
+const api = app.globalData.api;
 const steps=["各个等级设备检查符合项提交（搬迁前）","提交","拆机打包","装车","卸车","安装","各个等级级设备检查符合项提交（安装后）","提交","其他检查","全部完成"]
 Page({
 
@@ -6,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    number:"001",
+    number:"",
     name:"负责人名称",
     equipment:[
       {
@@ -27,7 +29,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let that = this
+      this.setData({
+          number:options.roomid
+      })
+      let id = options.id
+      let projectid=options.projectid
+          //查询房间详情
+    wx.request({
+      url: api+'/equipment/queryEquipmentByRoomId?projectId='+projectid+"&roomId="+id, 
+      method:"GET",
+      success(res){
+        console.log(res)
+        that.setData({
+          equipment:res.data.data,
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
+    })
   },
 
   /**

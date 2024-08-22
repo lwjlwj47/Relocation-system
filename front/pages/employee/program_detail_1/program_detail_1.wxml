@@ -3,39 +3,25 @@
 	<view class="detail" >
 	<view class="detail-container">
 		<view class="program-name">
-		{{program.program_name}}
+		{{program.projectName}}
 		</view>
 		<view class="person">
-		<view class="theperson">甲方负责人：{{program.first_name}}</view>
-		<view class="theperson">乙方负责人：{{program.second_name}}</view>
+		<view class="theperson">甲方负责人：{{program.projectFirstPerson}}</view>
+		<view class="theperson">乙方负责人：{{program.projectSecondPerson}}</view>
 		</view>
 		<view class="data">
 		<view>项目日期</view>
-		<view>{{program.start_data}}-{{program.end_data}}</view>
+		<view>{{program.projectStartTime}}至{{program.projectEndTime}}</view>
 		</view>
 		<view>
 		<view class="detail-name">项目详情</view>
 		<t-textarea
 	wx:if="{{showon}}"
   t-class="external-class"
-  value="{{program.detail}}"
+  value="{{program.projectRemark}}"
 	maxcharacter="70"
   disableDefaultPadding="{{true}}"
 	style="height: 120rpx; padding: 16rpx;"
-	class="output"
-  disabled
-	/>
-	<view class="link-example" wx:if="{{showon}}" >
-	<view  bind:tap="changedetail" class="showon">展开</view>
-</view>
-		<t-textarea
-		wx:if="{{!showon}}"
-  t-class="external-class"
-  value="{{program.detail}}"
-	maxcharacter="200"
-  disableDefaultPadding="{{true}}"
-	autosize="{{autosize}}"
-	style=" padding: 16rpx;"
 	class="output"
   disabled
 	/>
@@ -51,7 +37,7 @@
 	</view>	
 	<view class='room'>
 	<t-button theme="primary" variant="outline" size="small"wx:for="{{current_room}}" bind:tap="gotoroom">
-	房间编号{{item.number}}
+	房间编号{{item.roomId}}
 	</t-button>
 	</view>
 	<view class="on" wx:if="{{six}}" bind:tap="changeall">

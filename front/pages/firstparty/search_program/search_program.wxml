@@ -1,0 +1,19 @@
+<!--pages/firstparty/search_program/search_program.wxml-->
+<view class="search">
+  <t-search placeholder="请输入高校/企事业单位名称"  shape="round"  bind:change="onChangeValue" bind:submit="submit"/>
+</view>
+<view class='card'>
+	<view wx:for="{{unit_school}}" class="the-card" bind:tap="gotodetail" data-key = "{{item.name}}">
+		<view class="image-1">
+			<t-image src="{{item.image}}" class="image"></t-image>
+		</view>
+		<view class="name">
+				<text class="unit-name">{{item.name}}</text>
+				<view class="number">
+					<t-icon name="folder" size="30rpx" class="unit-icon" style="color: rgba(204, 33, 41, 1);"/>
+					<text class="number-describer">项目数</text>
+					<text class="unit-number">{{item.number}}</text>
+				</view>
+			</view>
+	</view>
+</view>

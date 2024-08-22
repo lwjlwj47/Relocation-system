@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.move.mapper.StaffMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.move.pojo.Staff">
+            <id property="staffId" column="staff_id" jdbcType="INTEGER"/>
+            <result property="staffType" column="staff_type" jdbcType="VARCHAR"/>
+            <result property="staffName" column="staff_name" jdbcType="VARCHAR"/>
+            <result property="staffIdNo" column="staff_id_no" jdbcType="VARCHAR"/>
+            <result property="staffPhoneNo" column="staff_phone-no" jdbcType="VARCHAR"/>
+            <result property="staffWechatNo" column="staff_wechat_no" jdbcType="VARCHAR"/>
+            <result property="staffPos" column="staff_pos" jdbcType="VARCHAR"/>
+            <result property="staffStatus" column="staff_status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        staff_id,staff_type,staff_name,
+        staff_id_no,staff_phone-no,staff_wechat_no,
+        staff_pos,staff_status
+    </sql>
+    <select id="staffNameByStaffid" resultMap="BaseResultMap">
+        select * from staff where staff_id = #{staffid}
+    </select>
+</mapper>

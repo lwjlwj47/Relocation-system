@@ -1,4 +1,7 @@
 // pages/firstparty/program_detail/program_detail.js
+const app = getApp();
+const api = app.globalData.api;
+
 Page({
 
   /**
@@ -11,28 +14,28 @@ Page({
     unit:"",
     unit_number:"",
     value:"",
-    program:[
-      {
-        program_name:"总项目名称",
-        first_name:"刘三",
-        second_name:"李四",
-        start_data:"2024.06.10",
-        end_data:"2024.06.16",
-        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
+    // program:[
+    //   {
+    //     program_name:"总项目名称",
+    //     first_name:"刘三",
+    //     second_name:"李四",
+    //     start_data:"2024.06.10",
+    //     end_data:"2024.06.16",
+    //     detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
 
-      }
-    ],
-    program_done:[
-      {
-        program_name:"总项目名称",
-        first_name:"刘三",
-        second_name:"李四",
-        start_data:"2024.06.10",
-        end_data:"2024.06.16",
-        detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
+    //   }
+    // ],
+    // program_done:[
+    //   {
+    //     program_name:"总项目名称",
+    //     first_name:"刘三",
+    //     second_name:"李四",
+    //     start_data:"2024.06.10",
+    //     end_data:"2024.06.16",
+    //     detail:"这是项目详情段落文本备注，这是项目详情段落文本这是项目详情段落文本，这是项目详情..."
 
-      }
-    ]
+    //   }
+    // ]
   },
 
   /**
@@ -40,9 +43,22 @@ Page({
    */
   onLoad(options) {
     console.log(options)
-    this.setData({
-      unit:options.name,
-      unit_number:options.number
+    console.log(options)
+    const that = this
+    const unit  = options.name
+    wx.request({
+      url: api+'/project/queryProjectByUnit?projectUnit='+unit,
+      method:"GET",
+      success(res){
+        console.log(res)
+        that.setData({
+          program:res.data.data
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
     })
   },
 
@@ -111,10 +127,11 @@ Page({
     })
     console.log(this.data.value)
   },
-  goto()
+  goto(e)
   {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/manage/program_detail_1/program_detail_1',
+      url: '/pages/manage/program_detail_1/program_detail_1?id='+id,
     })
   },
   onIconTap(e)

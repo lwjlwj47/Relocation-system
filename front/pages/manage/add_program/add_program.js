@@ -1,4 +1,7 @@
 // pages/manage/add_program/add_program.js
+const app = getApp();
+const api = app.globalData.api;
+
 Page({
 
   /**
@@ -60,7 +63,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
   },
 
   /**
@@ -164,9 +166,7 @@ Page({
   onConfirm(e) {
     const { value } = e.detail;
     const { mode } = this.data;
-
     console.log('confirm', value);
-
     this.setData({
       [mode]: value,
       [`${mode}Text`]: value,
@@ -229,6 +229,30 @@ Page({
   //   //直接给上移页面赋值
   //   back: true,
   // });
+  wx.request({
+    url: api+'/project/addProject',
+    method:"POST",
+    data:{
+      "projectGrade": 1,
+      "projectName": this.data.name2,
+      "projectFirstPerson": this.data.name3,
+      "projectSecondPerson": this.data.personText,
+      "projectStartTime": this.data.date1Text,
+      "projectEndTime": this.data.date2Text,
+      "projectRemark": this.data.remark,
+      "projectIsDone": 0,
+      "projectUnit": this.data.name1,
+      "projectUnitType": this.data.cityValue[0]
+    },
+    success(res){
+      console.log(res)
+    },
+    fail(res)
+    {
+      console.log(res)
+    }
+  })
+
   wx.navigateBack({
     //返回
     delta:1

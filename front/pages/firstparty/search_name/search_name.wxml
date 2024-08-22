@@ -1,13 +1,10 @@
 <!--pages/firstparty/program_detail/program_detail.wxml-->
 <view class="search">
-  <t-search placeholder="请输入项目名称" shape="round"/>
+  <t-search placeholder="请输入项目名称" shape="round" bind:change="onChangeValue" bind:submit="submit"/>
 </view>
-<t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
-  <t-tab-panel label="未完成" value="0" />
-  <t-tab-panel label="已完成" value="1" />
-</t-tabs>
+
 <!-- 未完成的项目 -->
-<view class="card" wx:if="{{value==0}}">
+<view class="card" >
 	<view class="detail" wx:for="{{program}}"  wx:if="{{item.projectIsDone==0}}">
 	<view class="detail-container">
 		<view class="program-name">
@@ -40,7 +37,7 @@
 	</view>
 </view>
 <!-- 已完成的项目 -->
-<view class="card" wx:if="{{value==1}}">
+<view class="card">
 	<view class="detail" wx:for="{{program}}" wx:if="{{item.projectIsDone==1}}">
 	<view class="detail-container">
 		<view class="done">

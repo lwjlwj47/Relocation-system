@@ -1,13 +1,11 @@
-// pages/firstparty/program/program.js
+// pages/firstparty/search_program/search_program.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    input:"",
-    pageCur:"program",
-    value:"0",
+    value:"",
     unit_school:[
       {
         image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
@@ -30,31 +28,13 @@ Page({
         number:120
       }
     ],
-    unit_conpany:[
-      {
-        image:"https://img.js.design/assets/img/62d4d34291c472110f55acfc.png",
-        name:"天津共享信息咨询有限公司",
-        number:24
-      }
-    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-      wx.request({
-        url: 'http://localhost:8080/project/queryProjectInfo',
-        method:"GET",
-        success(res)
-        {
-          console.log(res.data)
-        },
-        fail(res)
-        {
-          console.log(res.data)
-        }
-      })
+    let value = options.value
   },
 
   /**
@@ -105,33 +85,6 @@ Page({
   onShareAppMessage() {
 
   },
-  methods:{
-    onTabsChange() {
-      // console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
-      console.log("change")
-    },
-
-    onTabsClick() {
-      console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
-    },
-
-    onStickyScroll(event) {
-      console.log(event.detail);
-    },
-  },
-  onTabsChange(event) {
-    console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
-    this.setData({
-      value:event.detail.value
-    })
-    console.log(this.data.value)
-  },
-  gotodetail(e)
-  {
-    wx.navigateTo({
-      url: '/pages/firstparty/program_detail/program_detail?unit='+e.currentTarget.dataset.key,
-    })
-  },
   onChangeValue(e)
   {
     console.log(e)
@@ -142,8 +95,5 @@ Page({
   submit(e)
   {
     console.log("提交了")
-    wx.navigateTo({
-      url: '/pages/firstparty/search_program/search_program?value='+this.data.input,
-    })
   }
 })

@@ -1,4 +1,7 @@
 // pages/firstparty/program_detail/program_detail.js
+const app = getApp();
+const api = app.globalData.api;
+
 Page({
 
   /**
@@ -35,6 +38,22 @@ Page({
    */
   onLoad(options) {
     console.log(options)
+    const that = this
+    const unit  = options.name
+    wx.request({
+      url: api+'/project/queryProjectByUnit?projectUnit='+unit,
+      method:"GET",
+      success(res){
+        console.log(res)
+        that.setData({
+          program:res.data.data
+        })
+      },
+      fail(res)
+      {
+        console.log(res)
+      }
+    })
   },
 
   /**
@@ -92,10 +111,11 @@ Page({
     })
     console.log(this.data.value)
   },
-  goto()
+  goto(e)
   {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/manage/program_detail_1/program_detail_1',
+      url: '/pages/manage/program_detail_1/program_detail_1?id='+id,
     })
   }
 })

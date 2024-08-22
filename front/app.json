@@ -50,7 +50,9 @@
     "pages/employee/daily_paper/daily_paper",
     "pages/employee/write_paper/write_paper",
     "pages/employee/paper/paper",
-    "pages/employee/reimbursement/reimbursement"
+    "pages/employee/reimbursement/reimbursement",
+    "pages/firstparty/search_program/search_program",
+    "pages/firstparty/search_name/search_name"
   ],
   "window": {
     "navigationBarTextStyle": "black",

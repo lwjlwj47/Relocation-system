@@ -5,17 +5,17 @@
 	<view class="car-name">
 		<t-image src="{{item.image}}" style="width:160rpx;height:160rpx" ></t-image>
 		<view style="margin-left: 24rpx;">
-		<view class="car-name-1">{{item.name}}</view>
-		<view class="car-time">使用时间:{{item.start_time}}-{{item.end_time}}</view>
+		<view class="car-name-1">{{item.carName}}</view>
+		<view class="car-time">使用时间:{{item.carStartTime}}至{{item.carEndTime}}</view>
 		</view>
 	</view>
 	<view class="car-info">
 	<view class="box">
-	<view>{{item.person}}</view>
+	<view>{{item.name}}</view>
 	<view class="remark">负责人</view>
 	</view>
 	<view class="box">
-	<view>{{item.info}}</view>
+	<view>{{item.carNumber}}</view>
 	<view class="remark">车辆信息</view>
 	</view>
 </view>
